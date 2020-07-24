@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import MainPage from './MainPage';
+import LoginPage from './LoginPage';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-ReactDOM.render(<MainPage />, document.getElementById("root"));
+ReactDOM.render(<LoginPage />, document.getElementById("root"));
 
