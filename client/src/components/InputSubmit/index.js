@@ -4,13 +4,13 @@ import {
   InputGroupAddon,
   Input,
   Button
- } from 'reactstrap';
+} from 'reactstrap';
 
 const InputSubmit = () => {
   return (
     <div>
-      <InputGroup>
-        <Input />
+      <InputGroup className="mb-3">
+        <Input placeholder="Name" />
         <InputGroupAddon addonType="prepend"><Button>Submit</Button></InputGroupAddon>
       </InputGroup>
     </div>
