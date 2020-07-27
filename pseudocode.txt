@@ -1,34 +1,67 @@
 User model 
   - Read doc for Auth0 user authentication
 
-Main Page 
-  - Gig input field on click submit button:
-    - Save Gig model into MongoDB
-    - Talks to Gig table to pull/populate data 
-    - Gig state starts as empty array
-    - setState of Gig array to current array with new gig added 
-    - Rerender whole page with Gigs 
+CRUD Page 
 
-    - Setlist input field on click submit button:
+  * GIG *
+  Rerender list of gigs, Gig input field onClick add button:
+    * Gig state starts as empty array - message "You have no gigs, please add a gig name!"
+    
+    Add button:
+      - Save Gig model into MongoDB 
+      - Talks to Gig table to pull/populate data 
+      - setState of Gig array to current array with new gig added 
+      - Rerender updated list with ability to "-" Gig
+
+    onClick Gig Name:
+      - Render SetlistArray for specific gig selection with "-"
+      - Render all available setlist names in database with "+"
+  
+  * SETLIST *
+  Rerender list of setlists, Setlist input field onClick add button:
+    * Setlist state starts as empty array - message "You have no setlists, please add a set name!"
+
+    Add button:
       - Save Setlist model into MongoDB
       - Talks to Setlist table to pull/populate data 
       - Setlist state starts as empty array
       - setState of Setlist array to current array with new set added 
-      - Rerender whole page with Setlists 
+      - Rerender updated list 
+
+    onClick Setlist Name:
+      - Render SongArray for specific setlist selection with "-"
+      - Add a song component with 2 input fields & submit button. Talks to the API
+
+    onClick submit button:
+      - Save Gig model into MongoDB 
+      - Talks to Gig table to pull/populate data 
+      - setState of Gig array to current array with new gig added 
+      - Render SongArray 
 
   Gig/Setlist Delete button:
     - Delete item(s) from the table
     - Update array without deleted item(s)
     - Render page with updated array
+    - '+' onClick will add Setlist name to Gig on list on left
+    - '-' onClick will delete Setlist name from Gig's 
+  
+  Add Songs:
+    - Song Title & Artist input fields with submit button
+    - onClick Submit will save name & artist, display on middle rectangle (Setlist name)
+
 
   Clickable names (Gig/Setlist):
   - Directs user to specific item page
 
-Gig Page
+Dashboard/Main Page
   - Render gig page name as title
   - Display all available Setlists in DB (right side)
   - Display SetlistArray from Gig document (left side)
   - Add Setlist component buttons (add/edit/delete)
-  - '+' onClick will add Setlist name to Gig on list on left
-  - '-' onClick will delete Setlist name from Gig's SetlistArray
+  SetlistArray
+  - Rerender page with Setlists in Gig with each onClick changes
+    Setlist Page
+    -Render setlist name as title
+    -Display all available songs in DB (right side)?
+    -Display songarray of setlist (left side)
   - Rerender page with Setlists in Gig with each onClick changes
