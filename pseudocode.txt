@@ -32,3 +32,12 @@ Gig Page
   - '+' onClick will add Setlist name to Gig on list on left
   - '-' onClick will delete Setlist name from Gig's SetlistArray
   - Rerender page with Setlists in Gig with each onClick changes
+
+  Setlist Page
+    -Render setlist name as title
+    -Display all available songs in DB (right side)?
+    -Display songarray of setlist (left side)
+    - Add Song component buttons (add/edit/delete)
+  - '+' onClick will add Song name to Setlist on list on left
+  - '-' onClick will delete Song name from Setlist's songarray
+  - Rerender page with Setlists in Gig with each onClick changes
