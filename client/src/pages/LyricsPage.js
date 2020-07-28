@@ -4,8 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import GigSetList from '../components/GigSetList';
 import Lyrics from '../components/Lyrics'
 
-class LyricsPage extends Component {
-  render() {
+const LyricsPage = () => {
     return (
       <div>
         <NavTop />
@@ -21,8 +20,8 @@ class LyricsPage extends Component {
         </Container>
       </div>
     );
-  }
-}
+  };
+
 
 export default LyricsPage;
 

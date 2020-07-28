@@ -1,4 +1,3 @@
-import React, { Component } from 'react';
 import NavTop from '../components/NavTop';
 import GigList from '../components/GigList';
 import GigSetList from '../components/GigSetList'
@@ -6,8 +5,7 @@ import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
 import { Row, Col, Container } from 'reactstrap';
 
-class MainPage extends Component {
-  render() {
+const MainPage = () => {
     return (
       <div>
         <NavTop />
@@ -36,7 +34,7 @@ class MainPage extends Component {
         </Container>
       </div>
     );
-  }
-}
+  };
+
 
 export default MainPage;

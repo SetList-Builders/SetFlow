@@ -3,8 +3,7 @@ import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
 import LoginForm from "../components/LoginForm"
 
-class RegisterPage extends Component {
-  render() {
+const RegisterPage = () => {
     return (
       <div>
         <Container className="mx-auto">
@@ -34,6 +33,5 @@ class RegisterPage extends Component {
       </div>
     );
   }
-}
 
 export default RegisterPage;

@@ -5,8 +5,7 @@ import { Container, Row, Col } from 'reactstrap';
 import GigSetList from '../components/GigSetList';
 import InputSubmit from '../components/InputSubmit'
 
-class CrudePage extends Component {
-  render() {
+const CrudPage = () => {
     return (
       <div>
         <NavTop />
@@ -36,6 +35,5 @@ class CrudePage extends Component {
       </div>
     );
   }
-}
 
-export default CrudePage;
+export default CrudPage;
