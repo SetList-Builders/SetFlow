@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
+import React from 'react';
+import { Route, NavLink, BrowserRouter as Router } from 'react-router-dom'
 import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
 import LoginForm from "../components/LoginForm"
 
+const LoginPage = () => {
 
-class LoginPage extends Component {
-  render() {
+  const registerLink = <NavLink to='/register'>Register</NavLink>
+
     return (
       <div>
         <Container className="mx-auto">
@@ -13,29 +14,25 @@ class LoginPage extends Component {
             <h1 className="display-3">Welcome to SetFlow!</h1>
             <p className="lead">Create Gigs and SetList(s) for Your Next Jamming Session</p>
             <hr className="my-4" />
-            <Form>
-              <LoginForm />
-            </Form>
+            <LoginForm />
             <Container>
               <div className="d-flex flex-column">
                 <p className="d-flex justify-content-center">
                   <Button class="center" color="secondary">Login</Button>
                 </p>
-                <Router>
                   <div className="d-flex justify-content-center">
-                    <p>Click here to <Link to="./RegisterPage.js">Register</Link></p>
+                      <p>Click here to {registerLink}</p>
                   </div>
                   <div className="d-flex justify-content-center">
-                    <p>Forgot password? Click <Link to="./MainPage.js">Here</Link></p>
+                    <p>Forgot password? Click <a>Here</a></p>
                   </div>
-                </Router>
               </div>
             </Container>
           </Jumbotron>
         </Container>
       </div>
+
     );
   }
-}
 
 export default LoginPage;
