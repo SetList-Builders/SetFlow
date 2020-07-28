@@ -5,7 +5,7 @@ import { Card, CardTitle, CardText, } from 'reactstrap';
 const GigSetList = () => {
   return (
     <Card body>
-       <CardTitle>John's Wedding</CardTitle>
+      <CardTitle>John's Wedding</CardTitle>
       <CardTitle>SetList:</CardTitle>
       <CardText>
         <ol>

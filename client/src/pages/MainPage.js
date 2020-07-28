@@ -23,13 +23,14 @@ const MainPage = () => {
             </Col>
           </Row>
           <Row>
-          <Col sm="4">
+            <Col sm="4">
               <AllSetList />
             </Col>
             <Col>
-            <Songs />
+              <Songs />
             </Col>
             <Col>
+            
             </Col>
           </Row>
         </Container>
