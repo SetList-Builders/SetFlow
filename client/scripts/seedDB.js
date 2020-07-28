@@ -7,6 +7,7 @@ mongoose.connect(
 
 const userSeed = [
     {
+        _id:"",
         username: "User1",
         token: ""
     }
@@ -15,27 +16,31 @@ const userSeed = [
 
 const gigSeed = [
     {
+        _id:"",
         user_id: "",
         gigName: "Gig 1",
-        setlistArray: [Setlist1_id, Setlist2_id]
+        setlistArray: []
     }
 ]
 
 const setlistSeed = [
     {
+        _id:"",
        user_id: "",
        setlistName: "Setlist 1",
-       songArray: [Song1_id, Song2_id, Song3_id]  
+       songArray: []  
     },
     {
+        _id:"",
         user_id: "",
         setlistName: "Setlist 2",
-        songArray: [Song1_id, Song2_id, Song3_id]
+        songArray: []
     }
 ]
 
 const songSeed = [
     {
+        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "I Will Survive",
@@ -44,6 +49,7 @@ const songSeed = [
         }
     },
     {
+        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "Respect",
@@ -52,6 +58,7 @@ const songSeed = [
         }
     },
     {
+        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "Proud Mary",
@@ -60,6 +67,7 @@ const songSeed = [
         }
     },
     {
+        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "Sweet Dreams (Are Made of This",
@@ -68,6 +76,7 @@ const songSeed = [
         }
     },
     {
+        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "Fancy",
@@ -77,6 +86,7 @@ const songSeed = [
 
     }, 
     {
+        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "It's Raining Men",
