@@ -29,9 +29,6 @@ const MainPage = () => {
             <Col>
               <Songs />
             </Col>
-            <Col>
-            
-            </Col>
           </Row>
         </Container>
       </div>

@@ -4,6 +4,7 @@ import GigList from "../components/GigList"
 import { Container, Row, Col } from 'reactstrap';
 import GigSetList from '../components/GigSetList';
 import InputSubmit from '../components/InputSubmit'
+import AddSong from '../components/AddSong';
 
 const CrudPage = () => {
     return (
@@ -29,6 +30,7 @@ const CrudPage = () => {
             <Col sm="4">
             </Col>
             <Col sm="4">
+              <AddSong />
             </Col>
           </Row>
         </Container>
