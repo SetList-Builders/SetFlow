@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NavTop from '../components/NavTop';
-import { Container, FormGroup, Input, Label } from 'reactstrap';
+import { Container, Row, Col } from 'reactstrap';
+import GigSetList from '../components/GigSetList';
+import Lyrics from '../components/Lyrics'
 
 class LyricsPage extends Component {
   render() {
@@ -8,10 +10,14 @@ class LyricsPage extends Component {
       <div>
         <NavTop />
         <Container>
-          <FormGroup>
-            <Label for="exampleText">Name of SetList</Label>
-            <Input type="textarea" name="text" id="lyrics" />
-          </FormGroup>
+        <Row>
+          <Col sm="4">
+           <GigSetList/>
+          </Col>
+          <Col>
+          <Lyrics/>
+          </Col>
+        </Row>
         </Container>
       </div>
     );

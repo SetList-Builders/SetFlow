@@ -1,6 +1,9 @@
 import React from 'react';
+import LaunchBtn from '../LaunchBtn'
 import InputSubmit from '../InputSubmit';
 import { Card, CardTitle, CardText } from 'reactstrap';
+import DeleteBtn from '../DeleteBtn'
+
 
 const GigList = () => {
   return (
@@ -9,14 +12,16 @@ const GigList = () => {
         <CardTitle>My Gigs</CardTitle>
         <CardText>
           <ol>
-            <li>Gig 1</li>
-            <li>Gig 2</li>
-            <li>Gig 3</li>
-            <li>Gig 4</li>
+            <li>John's Wedding <DeleteBtn/></li>
+            <LaunchBtn />
+            <li>Bar Mitzvah <DeleteBtn/> </li>
+            <LaunchBtn />
+            <li>Quinceañera <DeleteBtn/></li>
+            <LaunchBtn />
+            <li>Lavish Night Club <DeleteBtn/></li>
+            <LaunchBtn />
           </ol>
         </CardText>
-        <div className="btn-title" >Add Gig:</div>
-        <InputSubmit />
       </Card>
     </div>
   );

@@ -2,27 +2,23 @@ import React from 'react';
 import InputSubmit from '../InputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const SetList = () => {
+const GigSetList = () => {
   return (
     <Card body>
-      <CardTitle>SetList</CardTitle>
+       <CardTitle>John's Wedding</CardTitle>
+      <CardTitle>SetList:</CardTitle>
       <CardText>
         <ol>
-          <li>Tough Crowd</li>
-          <li>Karen and the Managers</li>
+          <li>Smooth Jazz</li>
+          <li>Get up, Dance</li>
           <li>Irish Folklore</li>
-          <li>Pirate Death Metal</li>
         </ol>
       </CardText>
       <div className="btn-title" >Add Setlist:</div>
       <InputSubmit />
     </Card>
 
-
-
-
-
   );
 };
 
-export default SetList;
+export default GigSetList;
