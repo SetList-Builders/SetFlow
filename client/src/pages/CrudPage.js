@@ -1,12 +1,11 @@
 import React, { Component } from 'react';
 import NavTop from '../components/NavTop';
-import GigList from '../components/GigList';
-import GigSetList from '../components/GigSetList'
-import AllSetList from '../components/AllSetList';
-import Songs from '../components/Songs';
-import { Row, Col, Container } from 'reactstrap';
+import GigList from "../components/GigList"
+import { Container, Row, Col } from 'reactstrap';
+import GigSetList from '../components/GigSetList';
+import InputSubmit from '../components/InputSubmit'
 
-class MainPage extends Component {
+class CrudePage extends Component {
   render() {
     return (
       <div>
@@ -15,22 +14,22 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <GigList />
-            </Col>
+              <div className="btn-title">Add Gig:</div>
+              <InputSubmit />
+            </Col >
             <Col sm="4">
               <GigSetList />
             </Col>
             <Col sm="4">
-              <Songs />
+
             </Col>
           </Row>
           <Row>
-          <Col sm="4">
-              <AllSetList />
+            <Col sm="4">
+            </Col >
+            <Col sm="4">
             </Col>
-            <Col>
-            <Songs />
-            </Col>
-            <Col>
+            <Col sm="4">
             </Col>
           </Row>
         </Container>
@@ -39,4 +38,4 @@ class MainPage extends Component {
   }
 }
 
-export default MainPage;
+export default CrudePage;
