@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'reactstrap';
 import GigSetList from '../components/GigSetList';
 import Lyrics from '../components/Lyrics'
 
-const LyricsPage = () => {
+const LaunchedPage = () => {
     return (
       <div>
         <NavTop />
@@ -23,6 +23,6 @@ const LyricsPage = () => {
   };
 
 
-export default LyricsPage;
+export default LaunchedPage;
 
 
