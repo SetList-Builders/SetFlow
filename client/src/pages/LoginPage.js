@@ -1,6 +1,6 @@
 import React from 'react';
-import { Route, NavLink, BrowserRouter as Router } from 'react-router-dom'
-import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
+import { NavLink } from 'react-router-dom'
+import { Container, Jumbotron, Button } from 'reactstrap';
 import LoginForm from "../components/LoginForm"
 
 const LoginPage = () => {
