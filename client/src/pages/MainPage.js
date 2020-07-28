@@ -4,36 +4,40 @@ import GigList from '../components/GigList';
 import GigSetList from '../components/GigSetList'
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
-import { Row, Col, Container } from 'reactstrap';
+import { Row, Col, Container, Card } from 'reactstrap';
 
 const MainPage = () => {
-    return (
-      <div>
-        <NavTop />
-        <Container>
-          <Row>
-            <Col sm="4">
+  return (
+    <div>
+      <NavTop />
+      <Container>
+        <Row>
+          <Col sm="4">
+            <Card body>
               <GigList />
-            </Col>
-            <Col sm="4">
+            </Card>
+          </Col>
+          <Col sm="4">
+            <Card body>
               <GigSetList />
-            </Col>
-            <Col sm="4">
-              <Songs />
-            </Col>
-          </Row>
-          <Row>
-            <Col sm="4">
-              <AllSetList />
-            </Col>
-            <Col>
-              <Songs />
-            </Col>
-          </Row>
-        </Container>
-      </div>
-    );
-  };
+            </Card>
+          </Col>
+          <Col sm="4">
+            <Songs />
+          </Col>
+        </Row>
+        <Row>
+          <Col sm="4">
+            <AllSetList />
+          </Col>
+          <Col>
+            <Songs />
+          </Col>
+        </Row>
+      </Container>
+    </div>
+  );
+};
 
 
 export default MainPage;

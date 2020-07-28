@@ -14,8 +14,6 @@ const Songs = () => {
           <li>Stylin</li>
         </ol>
       </CardText>
-      <div className="btn-title" >Add Setlist:</div>
-      <InputSubmit />
     </Card>
 
   );
