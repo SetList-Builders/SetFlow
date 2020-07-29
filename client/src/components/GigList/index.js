@@ -8,7 +8,6 @@ import DeleteBtn from '../DeleteBtn'
 const GigList = () => {
   return (
     <div>
-      <Card body>
         <CardTitle>My Gigs</CardTitle>
         <CardText>
           <ol>
@@ -22,7 +21,6 @@ const GigList = () => {
             <LaunchBtn />
           </ol>
         </CardText>
-      </Card>
     </div>
   );
 };

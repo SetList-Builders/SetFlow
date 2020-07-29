@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from 'reactstrap';
 
-const deleteBtn = () => {
+const DeleteBtn = () => {
   return (
     <Button close><span aria-hidden="true">–</span></Button>
   );
 };
 
-export default deleteBtn;
+export default DeleteBtn;
