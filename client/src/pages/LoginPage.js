@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Link } from 'react-router-dom'
 import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
-import LoginForm from "../components/LoginForm"
+import LoginForm from "../components/LoginForm";
+import Auth0LoginButton from '../components/Auth0Provider/Auth0LoginButton'
 
 
 class LoginPage extends Component {
@@ -19,7 +20,7 @@ class LoginPage extends Component {
             <Container>
               <div className="d-flex flex-column">
                 <p className="d-flex justify-content-center">
-                  <Button class="center" color="secondary">Login</Button>
+                  <Auth0LoginButton class="center" color="secondary">Auth0 Login</Auth0LoginButton>
                 </p>
                 <Router>
                   <div className="d-flex justify-content-center">
