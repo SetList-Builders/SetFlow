@@ -27,6 +27,11 @@ export default {
         return axios.delete("/api/gigs/" + id)
     },
 
+    //Update gig by id
+    updateGig: function(id) {
+        return axios.put("/api/gigs" + id)
+    },
+
     //Setlists
 
     //Get all setlists
@@ -49,26 +54,31 @@ export default {
         return axios.delete("/api/setlists/" + id)
     },
 
+    //Update setlist by id
+    updateSetlist: function(id) {
+        return axios.put("/api/setlist" + id)
+    },
+
     //Songs
 
     //Get all songs
-    getSongs: function() {
-        return axios.get("/api/songs/")
+    getLyrics: function() {
+        return axios.get("/api/lyrics/")
     },
 
     //Get specific song by id
-    getSong: function(id) {
-        return axios.get("/api/songs/" + id)
+    getLyrics: function(id) {
+        return axios.get("/api/lyrics/" + id)
     },
 
     //Save song to the database
-    saveSong: function(savedSongs) {
-        return axios.post("/api/songs/", savedSongs)
+    saveLyrics: function(savedSongs) {
+        return axios.post("/api/lyrics/", savedSongs)
     },
 
     //Delete song by id
-    deleteSong: function(id) {
-        return axios.delete("/api/songs/" + id)
+    deleteLyrics: function(id) {
+        return axios.delete("/api/lyrics/" + id)
     },
 
 }
