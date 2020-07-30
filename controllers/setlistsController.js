@@ -15,6 +15,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
+  findByGig: function(req, res) {
+    db.Setlist
+      .find({ gigs: req.params.key})
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err))
+  },
   create: function(req, res) {
     db.Setlist
       .create(req.body)
