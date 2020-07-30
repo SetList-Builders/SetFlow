@@ -1,7 +1,10 @@
+
 import React from 'react';
+import LoginForm from "../components/LoginForm";
+import Auth0LoginButton from '../components/Auth0Provider/Auth0LoginButton'
 import { NavLink } from 'react-router-dom'
 import { Container, Jumbotron, Button } from 'reactstrap';
-import LoginForm from "../components/LoginForm"
+
 
 const LoginPage = () => {
 
@@ -18,7 +21,7 @@ const LoginPage = () => {
             <Container>
               <div className="d-flex flex-column">
                 <p className="d-flex justify-content-center">
-                  <Button class="center" color="secondary">Login</Button>
+                  <Auth0LoginButton class="center" color="secondary">Auth0 Login</Auth0LoginButton>
                 </p>
                   <div className="d-flex justify-content-center">
                       <p>Click here to {registerLink}</p>
