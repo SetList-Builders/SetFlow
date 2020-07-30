@@ -1,13 +1,9 @@
 
-import React, { Component } from 'react';
-import { BrowserRouter as Router, Link } from 'react-router-dom'
-import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
+import React from 'react';
 import LoginForm from "../components/LoginForm";
 import Auth0LoginButton from '../components/Auth0Provider/Auth0LoginButton'
-import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { Container, Jumbotron, Button } from 'reactstrap';
-import LoginForm from "../components/LoginForm"
 
 
 const LoginPage = () => {
