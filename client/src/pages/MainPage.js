@@ -4,12 +4,16 @@ import GigList from '../components/GigList';
 import GigSetList from '../components/GigSetList'
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
+import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
 import { Row, Col, Container, Card } from 'reactstrap';
 
 const MainPage = () => {
   return (
     <div>
       <NavTop />
+      <p className="d-flex justify-content-center">
+                  <Auth0Profile class="center" color="secondary">Auth0 Login</Auth0Profile>
+                </p>
       <Container>
         <Row>
           <Col sm="4">
