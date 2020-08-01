@@ -2,13 +2,18 @@ import React from 'react';
 import { NavLink } from 'react-router-dom'
 import { Container, Jumbotron, FormGroup, Label, Input, Button, Form } from 'reactstrap';
 import LoginForm from "../components/LoginForm"
+import Loading from "../components/Loading/Loading";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
 
 const RegisterPage = () => {
+  const { user } = useAuth0();
 
   const loginLink = <NavLink to='/'>Login</NavLink>
 
   return (
     <div>
+      <Auth0Profile ></Auth0Profile>
       <Container className="mx-auto">
         <Jumbotron>
           <h1 className="display-3">Welcome to SetFlow!</h1>
@@ -35,4 +40,6 @@ const RegisterPage = () => {
   );
 }
 
-export default RegisterPage;
+export default withAuthenticationRequired(RegisterPage, {
+  onRedirecting: () => <Loading />,
+});

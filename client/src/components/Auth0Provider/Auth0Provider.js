@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import Index from "../../index";
+import App from "../../App";
 import { Auth0Provider } from "@auth0/auth0-react";
 
 ReactDOM.render(
@@ -9,7 +9,7 @@ ReactDOM.render(
     clientId="BnFVT4p5d2Sfy12SRUoQRqS0JNqzuWe4"
     redirectUri={window.location.origin}
   >
-    <Index />
+    <App />
   </Auth0Provider>,
   document.getElementById("root")
 );

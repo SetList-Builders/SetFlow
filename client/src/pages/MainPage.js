@@ -4,16 +4,17 @@ import GigList from '../components/GigList';
 import GigSetList from '../components/GigSetList'
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
+import Loading from "../components/Loading/Loading";
 import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
 import { Row, Col, Container, Card } from 'reactstrap';
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 
 const MainPage = () => {
+  const { user } = useAuth0();
   return (
     <div>
       <NavTop />
-      <p className="d-flex justify-content-center">
-                  <Auth0Profile class="center" color="secondary">Auth0 Login</Auth0Profile>
-                </p>
+      <Auth0Profile ></Auth0Profile>
       <Container>
         <Row>
           <Col sm="4">
@@ -44,4 +45,6 @@ const MainPage = () => {
 };
 
 
-export default MainPage;
+export default withAuthenticationRequired(MainPage, {
+  onRedirecting: () => <Loading />,
+});
