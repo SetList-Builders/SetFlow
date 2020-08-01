@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 //import LoginPage from './pages/LoginPage';
-//import MainPage from './pages/MainPage'
+// import MainPage from './pages/MainPage2'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Auth0Provider } from "@auth0/auth0-react";

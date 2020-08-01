@@ -18,14 +18,14 @@ const GigList = props => {
         <div className="gigCard">
             <CardTitle>My Gigs</CardTitle>
             <CardText>
+            <ol className="gigList">
                 {props.gigs.map(gig => {
                     return (
-                        <ol className="gigList">
                             <li className="gigItem" id={gig.name} key={gig.id}>{gig.name} <DeleteBtn/> <LaunchBtn/>
                             </li>
-                        </ol>
                     )
                 })}
+            </ol>
             </CardText>
         </div>
     )

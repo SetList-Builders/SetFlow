@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavTop from '../components/NavTop';
-import GigList from '../components/GigList';
+import GigList from '../components/GigList/index2';
 import GigSetList from '../components/GigSetList'
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
@@ -22,4 +22,12 @@ class MainPage extends Component {
           .then(res => this.setState({ setlists: res.data }))
           .catch(err => console.log(err))
     }
+
+  render() {
+    return (
+      <GigList />
+    )
+  }
 }
+
+export default MainPage

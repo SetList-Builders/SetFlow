@@ -1,8 +1,26 @@
 {
+  "name": "setflow",
+  "version": "1.0.0",
+  "description": "SetFlow is an app that enables musicians to create and organize setlists more efficiently than ever.  Users can set up separate Gigs, with multiple Setlists for each Gig.  Instantly retrieve lyrics via the API Seeds Lyrics API to implement into your Setlists, and add your own notes for chords, tempos, dynamics, etc.  Or, if you prefer not to include lyrics, simply enter just your song titles and notes.  Don’t waste any more time searching for, copying, and pasting lyrics, or printing out paper copies that can easily be lost or mixed up during live performances.  SetFlow makes it simple and convenient to create and organize your setlists and lyrics, and can easily be used on any computer or mobile device during live performances.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "start:prod": "node server.js",
+    "client": "cd client && npm run start",
+    "server": "cd server && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SetList-Builders/SetFlow.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/SetList-Builders/SetFlow/issues"
+  },
+  "homepage": "https://github.com/SetList-Builders/SetFlow#readme",
   "dependencies": {
-    "@auth0/auth0-react": "^1.0.0",
-    "@auth0/auth0-spa-js": "^1.11.0",
-    "bootstrap": "^4.5.0",
-    "react-bootstrap": "^1.3.0"
+    "concurrently": "^5.2.0"
   }
 }
