@@ -8,11 +8,19 @@ import AddSong from '../components/AddSong';
 import SavedSets from '../components/SavedSets';
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
+import Loading from "../components/Loading/Loading";
+import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
 
 const CrudPage = () => {
+  const { user } = useAuth0();
+
   return (
     <div>
       <NavTop />
+      
+      <Auth0Profile></Auth0Profile>
+                
       <Container>
         <Row>
           <Col sm="4">
@@ -49,4 +57,6 @@ const CrudPage = () => {
   );
 }
 
-export default CrudPage;
+export default withAuthenticationRequired(CrudPage, {
+  onRedirecting: () => <Loading />,
+});

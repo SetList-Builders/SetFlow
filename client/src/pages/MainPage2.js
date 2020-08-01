@@ -9,7 +9,10 @@ import API from '../utils/API';
 
 class MainPage extends Component {
     state = {
-        gigs: [],
+        gigs: [{
+          id: "1",
+          name: "Gig 1"
+        }],
         setlists: [],
         songs: []
     }
@@ -25,7 +28,7 @@ class MainPage extends Component {
 
   render() {
     return (
-      <GigList />
+      <GigList data={this.state} />
     )
   }
 }

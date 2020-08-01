@@ -21,6 +21,12 @@
   },
   "homepage": "https://github.com/SetList-Builders/SetFlow#readme",
   "dependencies": {
-    "concurrently": "^5.2.0"
-  }
+    "concurrently": "^5.2.0",
+    "@auth0/auth0-react": "^1.0.0",
+    "@auth0/auth0-spa-js": "^1.11.0"
+  },
+  "engines": {
+    "npm": "6.13.4",
+    "node": "12.16.1"}
+
 }

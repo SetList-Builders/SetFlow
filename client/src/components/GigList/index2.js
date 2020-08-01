@@ -3,8 +3,11 @@ import LaunchBtn from '../LaunchBtn'
 import { Card, CardTitle, CardText } from 'reactstrap';
 import DeleteBtn from '../DeleteBtn'
 
+
+
 const GigList = props => {
-    return (props.gigs.length === 0) ? (
+    console.log(props.data.gigs)
+    return (props.data.gigs.length === 0) ? (
         <div className="gigCard">
            <CardTitle>My Gigs</CardTitle> 
            <CardText>
@@ -19,7 +22,7 @@ const GigList = props => {
             <CardTitle>My Gigs</CardTitle>
             <CardText>
             <ol className="gigList">
-                {props.gigs.map(gig => {
+                {props.data.gigs.map(gig => {
                     return (
                             <li className="gigItem" id={gig.name} key={gig.id}>{gig.name} <DeleteBtn/> <LaunchBtn/>
                             </li>
