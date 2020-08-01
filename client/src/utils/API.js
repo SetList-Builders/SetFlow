@@ -1,9 +1,9 @@
 import axios from "axios"
  
 export default {
-    getAPILyrics: function(artist, song, APIKey) {
-        return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
-    },
+    // getAPILyrics: function(artist, song, APIKey) {
+    //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
+    // },
 
     //Gigs
     
@@ -67,7 +67,7 @@ export default {
     },
 
     //Get specific song by id
-    getLyrics: function(id) {
+    getGigLyrics: function(id) {
         return axios.get("/api/lyrics/" + id)
     },
 
