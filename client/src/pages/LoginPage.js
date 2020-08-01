@@ -19,7 +19,6 @@ const LoginPage = () => {
             <h1 className="display-3">Welcome to SetFlow!</h1>
             <p className="lead">Create Gigs and SetList(s) for Your Next Jamming Session</p>
             <hr className="my-4" />
-            <LoginForm />
             <Container>
               <div className="d-flex flex-column">
                 <p className="d-flex justify-content-center">
