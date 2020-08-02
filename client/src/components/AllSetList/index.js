@@ -2,27 +2,34 @@ import React from 'react';
 import InputSubmit from '../InputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const AllSetList = () => {
-  return (
-    <Card body>
-      <h4></h4>
-      <CardTitle>Setlists:</CardTitle>
+const AllSetList = props => {
+  console.log(props.data.setlists)
+  if (props.data.setlists.length === 0) {
+    return (
+      <div className="gigCard">
+      <CardTitle>My Gigs</CardTitle>
       <CardText>
-        <ol>
-          <li>Pop Music</li>
-          <li>Blues</li>
-          <li>Smooth Jazz</li>
-          <li>Irish Folklore</li>
-          <li>Pirate Death Metal</li>
-          <li>Get up, Dance</li>
-          <li>Punk Rock</li>
-        </ol>
+        <strong>No Setlist have been created. <br /> To Create a Setlist, Go to the Edit Page.</strong>
       </CardText>
-      <div className="btn-title" >Add Setlist:</div>
-      <InputSubmit />
-    </Card>
-
-  );
-};
+    </div>
+    )
+  } else {
+    return (
+      <div className="setlistCard">
+          <CardTitle>Setlists:</CardTitle>
+          <CardText>
+            <ol className="setlist">
+              {props.data.setlists.map(setlist => {
+                return (
+                  <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.name}
+                  </li>
+                )
+              })}
+            </ol>
+          </CardText>
+      </div>
+    )
+  }
+}
 
 export default AllSetList;

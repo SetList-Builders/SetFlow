@@ -2,16 +2,18 @@ import React from 'react';
 import InputSubmit from '../InputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const Songs = () => {
+const Songs = props => {
   return (
     <Card body>
       <CardTitle>Smooth Jazz</CardTitle>
       <CardText>
         <ol>
-          <li>Top Down</li>
-          <li>Backyard Brew</li>
-          <li>The King is Here</li>
-          <li>Stylin</li>
+        {props.data.setlists.map(setlist => {
+              return (
+                <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.songs}
+                </li>
+              )
+            })}
         </ol>
       </CardText>
     </Card>
