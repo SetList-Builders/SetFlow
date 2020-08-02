@@ -1,16 +1,19 @@
 import React from 'react';
 import { CardTitle, CardText, } from 'reactstrap';
 
-const GigSetList = () => {
+const GigSetList = props => {
   return (
     <div>
-      <CardTitle>John's Wedding</CardTitle>
+      <CardTitle></CardTitle>
       <CardTitle>Setlist:</CardTitle>
       <CardText>
         <ol>
-          <li>Smooth Jazz</li>
-          <li>Get up, Dance</li>
-          <li>Irish Folklore</li>
+        {props.data.setlists.map(setlist => {
+              return (
+                <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.name}
+                </li>
+              )
+            })}
         </ol>
       </CardText>
     </div>
