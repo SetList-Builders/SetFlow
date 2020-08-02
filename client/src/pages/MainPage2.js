@@ -22,4 +22,5 @@ class MainPage extends Component {
           .then(res => this.setState({ setlists: res.data }))
           .catch(err => console.log(err))
     }
+
 }
