@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const setlistsController = require("../../../../controllers/setlistsController")
+const setlistsController = require("../../controllers/setlistsController")
 
 //Matches with "/api/setlists"
 router.route("/")

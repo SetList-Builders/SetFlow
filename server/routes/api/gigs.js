@@ -1,5 +1,5 @@
 const router = require("express").Router()
-const gigsController = require("../../../../controllers/gigsController")
+const gigsController = require("../../controllers/gigsController")
 
 //Matches with "/api/gigs"
 router.route("/")

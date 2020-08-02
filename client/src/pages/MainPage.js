@@ -48,3 +48,4 @@ const MainPage = () => {
 export default withAuthenticationRequired(MainPage, {
   onRedirecting: () => <Loading />,
 });
+
