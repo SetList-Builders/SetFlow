@@ -1,5 +1,5 @@
 const mongoose = require("mongoose")
-const db = require ("..models");
+const db = require ("../models");
 
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/setflow"
@@ -7,7 +7,6 @@ mongoose.connect(
 
 const userSeed = [
     {
-        _id:"",
         username: "User1",
         token: ""
     }
@@ -16,7 +15,6 @@ const userSeed = [
 
 const gigSeed = [
     {
-        _id:"",
         user_id: "",
         gigName: "Gig 1",
         setlistArray: []
@@ -25,13 +23,11 @@ const gigSeed = [
 
 const setlistSeed = [
     {
-        _id:"",
        user_id: "",
        setlistName: "Setlist 1",
        songArray: []  
     },
     {
-        _id:"",
         user_id: "",
         setlistName: "Setlist 2",
         songArray: []
@@ -40,7 +36,6 @@ const setlistSeed = [
 
 const songSeed = [
     {
-        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "I Will Survive",
@@ -49,7 +44,6 @@ const songSeed = [
         }
     },
     {
-        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "Respect",
@@ -58,7 +52,6 @@ const songSeed = [
         }
     },
     {
-        _id:"",
         setlist_id: "Setlist1_id",
         songInfo: {
             songTitle: "Proud Mary",
@@ -67,7 +60,6 @@ const songSeed = [
         }
     },
     {
-        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "Sweet Dreams (Are Made of This",
@@ -76,7 +68,6 @@ const songSeed = [
         }
     },
     {
-        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "Fancy",
@@ -86,7 +77,6 @@ const songSeed = [
 
     }, 
     {
-        _id:"",
         setlist_id: "Setlist2_id",
         songInfo: {
             songTitle: "It's Raining Men",
