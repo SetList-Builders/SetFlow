@@ -2,14 +2,25 @@ var mongoose = require("mongoose");
 
 var Schema = mongoose.Schema
 
-var User = new Schema({
+var UserSchema = new Schema({
     username: {
         type: String,
         required: true
     },
-    token: {
+    gigs: [{
+        type: Schema.Types.ObjectId,
+        ref: "Gig"
+    }],
+    setlists:[{
+        type: Schema.Types.ObjectId,
+        ref: "Setlist"
+    }]
+    //token: {
 
-    }
+    //}
 })
+
+var User = mongoose.model("User",UserSchema)
+module.exports = User
 
 //token data type unknown at this time
