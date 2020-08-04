@@ -3,19 +3,19 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema
 
 var gigSchema = new Schema({
-
+    user:{
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: "User"
+    },
     name:{
         type: String,
         required: true
     },
-    setlistList:{
+    setlists:[{
         type: Schema.Types.ObjectId,
         ref: "Setlist"
-    },
-    location:{
-        type: String,
-        required: true
-    }
+    }]
 });
 var Gig = mongoose.model("Gig", gigSchema);
 
