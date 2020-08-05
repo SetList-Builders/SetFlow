@@ -10,7 +10,6 @@ var LyricsSchema = new Schema({
     lyrics: [{
         type: String,
         required: true
-
     }],
     //This association to setlists was added in order to be able to search for 
     //setlist by a song in it.  This will be a future improvement
