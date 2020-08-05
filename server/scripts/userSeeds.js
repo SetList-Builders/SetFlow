@@ -4,7 +4,6 @@ const db = require ("../models");
 mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/setflow"
 )
-
 function seedUser(){
     const userSeed = [
         {
@@ -26,4 +25,3 @@ function seedUser(){
 }
 
 module.exports = {seedUser}
-

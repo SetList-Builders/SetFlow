@@ -1,10 +1,10 @@
 import React from 'react';
-import InputSubmit from '../InputSubmit';
+import InputSubmit from '../GigInputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
 const Songs = props => {
   return (
-    <Card body>
+    <div>
       <CardTitle></CardTitle>
       <CardText>
         <ol>
@@ -16,7 +16,7 @@ const Songs = props => {
             })}
         </ol>
       </CardText>
-    </Card>
+    </div>
 
   );
 };

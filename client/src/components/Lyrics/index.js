@@ -1,5 +1,4 @@
 import React from 'react';
-import InputSubmit from '../InputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
 const Lyrics = () => {
