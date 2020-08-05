@@ -7,7 +7,7 @@ var LyricsSchema = new Schema({
         type: String,
         required: true
     },
-    lyrics: {
+    lyrics: [{
         type: String,
         required: true
     },
