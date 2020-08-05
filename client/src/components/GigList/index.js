@@ -2,6 +2,7 @@ import React from 'react';
 import LaunchBtn from '../LaunchBtn'
 import { CardTitle, CardText } from 'reactstrap';
 import DeleteBtn from '../DeleteBtn'
+import Instructions from "../Instructions"
 
 
 
@@ -12,7 +13,7 @@ const GigList = props => {
       <div className="gigCard">
         <CardTitle>My Gigs</CardTitle>
         <CardText>
-          <strong>No Gigs Added. <br/> To Add a gig, go to the Edit page.</strong>
+          <strong>No Gigs Added.</strong>
         </CardText>
       </div>
 

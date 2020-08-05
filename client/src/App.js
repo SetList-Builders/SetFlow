@@ -1,8 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Loading from './components/Loading/Loading'
-import LoginPage from './pages/LoginPage';
-import RegisterPage from './pages/RegisterPage';
+import LandingPage from './pages/LandingPage';
 import MainPage from './pages/MainPage';
 import CrudPage from './pages/CrudPage';
 import LaunchedPage from './pages/LaunchedPage';
@@ -22,11 +21,10 @@ const App = () => {
   return (
     <Router history={history}>
       <Switch>
-      <Route exact path="/" component={LoginPage}/>
-      <Route path="/register" component={RegisterPage}/>
-      <Route path="/main" component={MainPage}/>
-      <Route path="/edit" component={CrudPage}/>
-      <Route path="/launched" component={LaunchedPage}/>
+        <Route exact path="/" component={LandingPage} />
+        <Route path="/main" component={MainPage} />
+        <Route path="/edit" component={CrudPage} />
+        <Route path="/launched" component={LaunchedPage} />
       </Switch>
     </Router>
   );

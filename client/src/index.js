@@ -1,30 +1,30 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-//import LoginPage from './pages/LoginPage';
+//import LandingPage from './pages/LandingPage';
 // import MainPage from './pages/MainPage2'
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import * as serviceWorker from "./serviceWorker";
 import { Auth0Provider } from "@auth0/auth0-react";
-import config from"./auth_config.json";
+import config from "./auth_config.json";
 import history from "./utils/history";
 
 const onRedirectCallback = (appState) => {
-    history.push(
-      appState && appState.returnTo
-        ? appState.returnTo
-        : window.location.pathname
-    );
-  };
+  history.push(
+    appState && appState.returnTo
+      ? appState.returnTo
+      : window.location.pathname
+  );
+};
 
 ReactDOM.render(
-  <React.StrictMode> 
+  <React.StrictMode>
     <Auth0Provider
-    domain={config.domain}
-    clientId={config.clientId}
-    audience={config.audience}
-    redirectUri="http://localhost:3000/main"
-    onRedirectCallback={onRedirectCallback}
+      domain={config.domain}
+      clientId={config.clientId}
+      audience={config.audience}
+      redirectUri="http://localhost:3000/main"
+      onRedirectCallback={onRedirectCallback}
     >
       <App />
     </Auth0Provider>
