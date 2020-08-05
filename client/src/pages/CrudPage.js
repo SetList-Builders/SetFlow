@@ -74,7 +74,15 @@ class CrudPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{
+        backgroundColor: "black",
+        position: "fixed",
+        width: "100%",
+        height: "100%",
+        top: "0px",
+        left: "0px",
+        zIndex: "1000"
+      }}>
         <NavTop />
         <Auth0Profile></Auth0Profile>
         <Container>
