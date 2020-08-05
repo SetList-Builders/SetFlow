@@ -11,17 +11,17 @@ var UserSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "Gig"
     }],
-    setlist: [{
+    setlists:[{
         type: Schema.Types.ObjectId,
         ref: "Setlist"
     }]
-    // token: {
+    //token: {
 
-    // }
+    //}
 })
 
-var User = mongoose.model("User", UserSchema);
+var User = mongoose.model("User",UserSchema)
+module.exports = User
 
-module.exports = User;
 
 //token data type unknown at this time

@@ -3,7 +3,11 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema
 
 var gigSchema = new Schema({
-
+    user:{
+        type: Schema.Types.ObjectId,
+        required: true,
+        ref: "User"
+    },
     name:{
         type: String,
         required: true

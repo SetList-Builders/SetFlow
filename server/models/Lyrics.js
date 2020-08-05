@@ -10,12 +10,14 @@ var LyricsSchema = new Schema({
     lyrics: [{
         type: String,
         required: true
+
     }],
-    setlists: [{
+    //This association to setlists was added in order to be able to search for 
+    //setlist by a song in it.  This will be a future improvement
+    setlists:[{
         type: Schema.Types.ObjectId,
         ref: "Setlist"
     }]
-
 });
 
 var Lyrics = mongoose.model("Lyrics", LyricsSchema);
