@@ -1,17 +1,16 @@
 
-import React from 'react';
+import React, { Component } from 'react';
 import LoginForm from "../components/LoginForm";
 import Auth0LoginButton from '../components/Auth0Provider/Auth0LoginButton';
 import Auth0LogoutButton from '../components/Auth0Provider/Auth0LogoutButton';
 import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
-import { NavLink } from 'react-router-dom'
-import { Container, Jumbotron, Button } from 'reactstrap';
+import { Container, Jumbotron } from 'reactstrap';
+import "./Landing.css"
 
 
-const LoginPage = () => {
 
-  const registerLink = <NavLink to='/register'>Register</NavLink>
-
+const LandingPage = () => {
+  
     return (
       <div>
         <Container className="mx-auto">
@@ -27,12 +26,6 @@ const LoginPage = () => {
                 <p className="d-flex justify-content-center">
                   <Auth0LogoutButton class="center" color="secondary">Auth0 Login</Auth0LogoutButton>
                 </p>
-                  <div className="d-flex justify-content-center">
-                      <p>Click here to {registerLink}</p>
-                  </div>
-                  <div className="d-flex justify-content-center">
-                    <p>Forgot password? Click <a>Here</a></p>
-                  </div>
               </div>
             </Container>
           </Jumbotron>
@@ -40,6 +33,7 @@ const LoginPage = () => {
       </div>
 
     );
-  }
 
-export default LoginPage;
+}
+
+export default LandingPage;

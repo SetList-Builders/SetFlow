@@ -11,22 +11,36 @@ import Songs from '../components/Songs';
 import Loading from "../components/Loading/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
+import API from '../utils/API';
 
 
-const CrudPage = props => {
-    const { user } = useAuth0();
-    console.log(props)
+class CrudPage extends Component {
+  state = {
+    gigs: [],
+    setlists: [],
+    songs: []
+  }
+
+  componentDidMount() {
+    API.getGigs()
+      .then(res => this.setState({ gigs: res.data }))
+      .catch(err => console.log(err));
+    API.getSetlists()
+      .then(res => this.setState({ setlists: res.data }))
+      .catch(err => console.log(err))
+  }
+
+
+  render() {
     return (
       <div>
         <NavTop />
-        
-        <Auth0Profile></Auth0Profile>
-                  
+        {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
             <Col sm="4">
               <Card body>
-                <GigList />
+                <GigList data={this.state} />
                 <div className="btn-title">Add Gig:</div>
                 <InputSubmit />
               </Card>
@@ -47,7 +61,7 @@ const CrudPage = props => {
               {/* <AllSetList /> */}
             </Col >
             <Col sm="4">
-              <Songs />
+              {/* <Songs /> */}
             </Col>
             <Col sm="4">
               {/* <AddSong /> */}
@@ -56,9 +70,8 @@ const CrudPage = props => {
         </Container>
       </div>
     );
+  }
 }
-
-
 
 export default withAuthenticationRequired(CrudPage, {
   onRedirecting: () => <Loading />,

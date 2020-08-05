@@ -3,10 +3,10 @@ var mongoose = require("mongoose");
 var Schema = mongoose.Schema
 
 var setlistSchema = new Schema({
-    user: {
+    user:{
         type: Schema.Types.ObjectId,
-        ref: "User",
-        required: true
+        required: true,
+        ref: "User"
     },
     name:{
         type: String,

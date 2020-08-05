@@ -5,21 +5,19 @@ mongoose.connect(
     process.env.MONGODB_URI || "mongodb://localhost/setflow"
 )
 
-async function findUserForSetlist(){
+async function findUserForGig(){
     const user = await db.User.findOne({username:"User1"})
-    const setlistSeed = [
-        {
-           user: user,
-           name: "Setlist 1",
-        },
+    const setlists = await db.Setlist.find({})
+    const gigSeed = [
         {
             user: user,
-            name: "Setlist 2",
+            name: "Gig 1",
+            setlists: setlists
         }
     ]
-    db.Setlist
+    db.Gig
   .deleteMany({})
-  .then(() => db.Setlist.create(setlistSeed)
+  .then(() => db.Gig.create(gigSeed)
   .then(data => {
       console.log("records inserted!")
   })
@@ -29,5 +27,4 @@ async function findUserForSetlist(){
   }))
 }
 
-module.exports = {findUserForSetlist}
-
+module.exports = {findUserForGig}

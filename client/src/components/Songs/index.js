@@ -5,7 +5,7 @@ import { Card, CardTitle, CardText, } from 'reactstrap';
 const Songs = props => {
   return (
     <Card body>
-      <CardTitle>Smooth Jazz</CardTitle>
+      <CardTitle></CardTitle>
       <CardText>
         <ol>
         {props.data.setlists.map(setlist => {

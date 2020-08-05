@@ -8,13 +8,11 @@ import { Row, Col, Container, Card } from 'reactstrap';
 import API from '../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Loading from "../components/Loading/Loading";
+import Instructions from "../components/Instructions"
 
 class MainPage extends Component {
   state = {
-    gigs: [{
-      id: "1",
-      name: "Gig 1"
-    }],
+    gigs: [],
     setlists: [],
     songs: []
   }
@@ -37,6 +35,7 @@ class MainPage extends Component {
             <Col sm="4">
               <Card body>
                 <GigList data={this.state} />
+                <Instructions />
               </Card>
             </Col>
             <Col sm="4">
@@ -54,6 +53,7 @@ class MainPage extends Component {
             <Col sm="4">
               <Card body>
                 <AllSetList data={this.state} />
+                <Instructions />
               </Card>
 
             </Col>
