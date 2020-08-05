@@ -21,7 +21,7 @@ const NavTop = () => {
   return (
     <div>
       <Navbar color="light" light expand="md">
-        <NavbarBrand href="/main">SetFlow</NavbarBrand>
+      <NavbarBrand >SetFlow</NavbarBrand>
         <Nav className="ml-auto" navbar>
             <NavItem>
             <NavLink 
