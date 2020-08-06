@@ -19,10 +19,15 @@ class MainPage extends Component {
 
   componentDidMount() {
     API.getGigs()
-      .then(res => this.setState({ gigs: res.data }))
+      .then(res => {this.setState({ gigs: res.data })
+      console.log(this.state)
+    })
+  
       .catch(err => console.log(err));
     API.getSetlists()
-      .then(res => this.setState({ setlists: res.data }))
+      .then(res => {this.setState({ setlists: res.data })
+      console.log(this.state)
+    })
       .catch(err => console.log(err))
   }
 

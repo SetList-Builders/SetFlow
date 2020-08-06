@@ -30,4 +30,5 @@ async function findSetlistForLyrics(){
     }))
   }
   
-  module.exports = {findSetlistForLyrics}
+  //module.exports = {findSetlistForLyrics}
+  findSetlistForLyrics()
