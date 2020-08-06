@@ -28,4 +28,5 @@ async function findUserForSetlist(){
   }))
 }
 
-module.exports = {findUserForSetlist}
+findUserForSetlist()
+

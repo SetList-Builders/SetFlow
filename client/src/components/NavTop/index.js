@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { useAuth0 } from "@auth0/auth0-react";
 import { NavLink as RouterNavLink } from "react-router-dom";
 import { Button, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
-
+// import styles from "./style.css"
+import LogoIcon from "./images/logo-icon.png"
+import LogoText from "./images/logo-text.png"
 
 const NavTop = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,8 +23,11 @@ const NavTop = () => {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#080939", fontWeight: "700", color: "#080939", borderBottom: "solid 1px #9d9d9d" }} expand="md">
-        <NavbarBrand style={{ fontWeight: "700", color: "#cea935", fontSize: "30px" }} href="/main">SetFlow</NavbarBrand>
+      <Navbar style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
+        <NavbarBrand href="/main">
+          <img src={LogoIcon} alt="Logo Icon" width="75px"/>
+          <img src={LogoText} alt="Logo Text" width="75px"/>
+        </NavbarBrand>
         <Nav className="ml-auto" navbar>
           <NavItem>
             <NavLink
