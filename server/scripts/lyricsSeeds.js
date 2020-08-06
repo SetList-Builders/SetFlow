@@ -29,6 +29,7 @@ async function findSetlistForLyrics(){
         process.exit(1)
     }))
   }
-  
+
   //module.exports = {findSetlistForLyrics}
 findSetlistForLyrics()
+
