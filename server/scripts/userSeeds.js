@@ -24,4 +24,5 @@ function seedUser(){
       }))
 }
 
-module.exports = {seedUser}
+seedUser()
+

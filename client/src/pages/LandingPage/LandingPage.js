@@ -6,6 +6,7 @@ import Auth0LogoutButton from '../../components/Auth0Provider/Auth0LogoutButton'
 import Auth0Profile from '../../components/Auth0Provider/Auth0Profile';
 import { Container, Jumbotron } from 'reactstrap';
 import "./Landing.css"
+import Logo from "./images/logo.png"
 
 
 
@@ -17,9 +18,10 @@ const LandingPage = () => {
         <Jumbotron style={{ marginTop: "70px", backgroundColor: "transparent", fontFamily: "Didot, serif", color: "#f8d78a" }}>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
-              <h1 style={{ color: "#f8d78a", fontWeight: "700", fontSize: "65px" }}>SetFlow</h1>
+              <img src={Logo} alt="SetFlow Logo" width="281px"/>
+              {/* <h1 style={{ color: "#f8d78a", fontWeight: "700", fontSize: "65px" }}>SetFlow</h1> */}
             </div>
-            <p className="lead d-flex justify-content-center">THE ULTIMATE SETLIST ORGINIZATION TOOL FOR MUSICIANS</p>
+            <p className="lead d-flex justify-content-center" style={{color: "#CEA935", fontFamily: "Geneva"}}>THE ULTIMATE SETLIST ORGINIZATION TOOL FOR MUSICIANS</p>
           </div>
           <Container>
             <div className="d-flex flex-column">

@@ -34,5 +34,5 @@ async function findSetlistForLyrics(){
 
   findSetlistForLyrics()
   
-//   module.exports = {findSetlistForLyrics}
+  
 
