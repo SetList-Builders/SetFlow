@@ -41,32 +41,32 @@ class MainPage extends Component {
         <Container>
           <Row>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
+              <Card body style={{ backgroundColor: "#cea935", border: "solid 3px #9d9d9d", color: "#080939", margin: "20px" }}>
                 <GigList data={this.state} />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
+              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #cea935", borderBottom: "solid 4px #cea935", borderLeft: "solid 3px #080939", borderRight: "solid 3px #080939", color: "#cea935", margin: "20px" }}>
                 <GigSetList data={this.state} />
               </Card>
             </Col>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
+              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #080939", borderBottom: "solid 4px #080939", borderLeft: "solid 3px #cea935", borderRight: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
 
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
+              <Card body style={{ backgroundColor: "#080939", border: "solid 3px #9d9d9d", color: "#cea935", margin: "20px" }}>
                 <AllSetList data={this.state} />
                 <Instructions />
               </Card>
 
             </Col>
             <Col>
-              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }} >
+              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #080939", borderBottom: "solid 4px #080939", borderLeft: "solid 3px #cea935", borderRight: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <Songs data={this.state} />
               </Card>
 
