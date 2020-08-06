@@ -12,4 +12,7 @@ router.route("/:id")
     .delete(lyricsController.remove)
     .put(lyricsController.update)
 
+//Matches with "api/lyrics/:setlistId"
+router.route("/:setlistId")
+  .get(lyricsController.findBySetlist)
 module.exports = router

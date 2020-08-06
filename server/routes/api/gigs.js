@@ -12,4 +12,7 @@ router.route("/:id")
     .delete(gigsController.remove)
     .put(gigsController.update)
 
+//Matches with "/api/gigs/:user"
+router.route("/:user")
+  .get(gigsController.findByUser)
 module.exports = router

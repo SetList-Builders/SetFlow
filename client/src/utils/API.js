@@ -5,8 +5,40 @@ export default {
     //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
     // },
 
+    //Users
+
+    //Get all users
+    getUsers: function() {
+        return axios.get("/api/users/")
+    },
+
+    //Get specific user by id
+    getUser: function(id) {
+        return axios.get("/api/users/" + id)
+    },
+    
+    //Save user to database
+    saveUser: function(savedUsers) {
+        return axios.post("/api/users" + savedUsers)
+    },
+
+    //Delete specific user by id
+    deleteUser: function(id) {
+        return axios.delete("/api/users/" + id)
+    },
+
+    //Update specific user by id
+    updateUser: function(id) {
+        return axios.put("/api/users/" + id)
+    },
+
     //Gigs
     
+    //Get all gigs for a specific user
+    getGigsByUser: function(user) {
+        return axios.get("/api/gigs/" + user) 
+    },
+
     //Get all gigs
     getGigs: function() {
         return axios.get("/api/gigs/")
@@ -29,10 +61,20 @@ export default {
 
     //Update gig by id
     updateGig: function(id) {
-        return axios.put("/api/gigs" + id)
+        return axios.put("/api/gigs/" + id)
     },
 
     //Setlists
+
+    //Get all setlists for a specific user
+    getSetlistsByUser: function(user) {
+        return axios.get("api/setlists/" + user)
+    },
+
+    //Get all setlists for a specific gig
+    getSetlistsByGig: function(gigId) {
+        return axios.get("/api/setlists/" + gigId) 
+    },
 
     //Get all setlists
     getSetlists: function() {
@@ -56,10 +98,15 @@ export default {
 
     //Update setlist by id
     updateSetlist: function(id) {
-        return axios.put("/api/setlist" + id)
+        return axios.put("/api/setlist/" + id)
     },
 
     //Songs
+
+    //Get all songs in a specific setlist
+    getLyricsBySetlist: function(setlistId) {
+        return axios.get("/api/lyrics/" + setlistId) 
+    },
 
     //Get all songs
     getLyrics: function() {

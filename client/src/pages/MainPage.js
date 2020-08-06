@@ -33,37 +33,48 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{
+        backgroundColor: "black",
+        position: "fixed",
+        width: "100%",
+        height: "100%",
+        top: "0px",
+        left: "0px",
+        zIndex: "1000"
+      }}>
         <NavTop />
         <Container>
           <Row>
             <Col sm="4">
-              <Card body>
+              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
                 <GigList data={this.state} />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
-              <Card body>
+              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
                 <GigSetList data={this.state} />
               </Card>
             </Col>
             <Col sm="4">
-              <Card body>
+              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
 
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
-              <Card body>
+              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }}>
                 <AllSetList data={this.state} />
                 <Instructions />
               </Card>
 
             </Col>
             <Col>
-              <Songs data={this.state} />
+              <Card body style={{ backgroundColor: "black", border: "dashed 1px #f8d78a", color: "#f8d78a", margin: "20px" }} >
+                <Songs data={this.state} />
+              </Card>
+
             </Col>
           </Row>
         </Container>

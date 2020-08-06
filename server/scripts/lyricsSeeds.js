@@ -1,11 +1,12 @@
 const mongoose = require("mongoose")
-const db = require ("../models");
+const db = require("../models");
 
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/setflow"
+  process.env.MONGODB_URI || "mongodb://localhost/setflow"
 )
 async function findSetlistForLyrics(){
     const setlists = await db.Setlist.find({})
+    console.log(setlists)
     const songSeed = [
         { 
             setlists: setlists,
@@ -22,13 +23,16 @@ async function findSetlistForLyrics(){
     .deleteMany({})
     .then(() => db.Lyrics.create(songSeed)
     .then(data => {
+        console.log(data)
         console.log("records inserted!")
-    })
-    .catch(err => {
+      })
+      .catch(err => {
         console.log(err)
         process.exit(1)
     }))
   }
+
+  findSetlistForLyrics()
   
   //module.exports = {findSetlistForLyrics}
   findSetlistForLyrics()
