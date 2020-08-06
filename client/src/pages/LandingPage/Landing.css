@@ -4,23 +4,46 @@ body {
 }
 
 .Auth0Button {
-	background-color:#000000;
-	border-radius:18px;
 	border:2px solid #cea835;
+	background: linear-gradient(180deg, #f7c82d 0%, #b67109 100%);
+	border-radius: 75px;
 	display:inline-block;
 	cursor:pointer;
-	color: #cea835;
-	font-family:Geneva;
+	color: beige;
+  font-family: 'Raleway', sans-serif;
 	font-size:17px;
 	font-weight:bold;
 	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
+  text-shadow:2px 2px 5px #000000;
+  transition: 0.4s;
 }
+
 .myButton:hover {
-	background-color:#476e9e;
+  border-color: #04101b;
+  background: linear-gradient(180deg, #051729 0%, #000000 100%);
+  color: #f7c82d;
 }
+
 .myButton:active {
 	position:relative;
 	top:1px;
+}
+
+.section {
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  text-align: center;
+  font-size: 25px;
+  color: beige;
+  margin-top: 10px;
+  margin-bottom: 35px;
+}
+
+.jumbo {
+  background-color: rgba(29, 29, 29, 0.5);
+  border-radius: 35px;
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }

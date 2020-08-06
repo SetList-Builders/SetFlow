@@ -14,14 +14,14 @@ const LandingPage = () => {
 
   return (
     <div>
-      <Container className="mx-auto">
-        <Jumbotron style={{ marginTop: "70px", backgroundColor: "transparent", fontFamily: "Didot, serif", color: "#cea935" }}>
+      <Container className="jumbo">
+        <Jumbotron style={{ marginTop: "30px", padding: "0px", backgroundColor: "transparent"}}>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
               <img src={Logo} alt="SetFlow Logo" width="281px"/>
               {/* <h1 style={{ color: "#f8d78a", fontWeight: "700", fontSize: "65px" }}>SetFlow</h1> */}
             </div>
-            <p className="lead d-flex justify-content-center" style={{color: "#CEA935", fontFamily: "Geneva"}}>THE ULTIMATE SETLIST ORGINIZATION TOOL FOR MUSICIANS</p>
+            <p className="d-flex justify-content-center section">THE ULTIMATE SETLIST ORGINIZATION TOOL FOR MUSICIANS</p>
           </div>
           <Container>
             <div className="d-flex flex-column">
