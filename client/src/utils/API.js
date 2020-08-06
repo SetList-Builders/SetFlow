@@ -8,6 +8,9 @@ export default {
     //Users
 
     //Get all users
+    findOrCreateUserbyemail: function(email){
+        return axios.post("/api/users/findorcreate", {email: email})
+    },
     getUsers: function() {
         return axios.get("/api/users/")
     },

@@ -19,6 +19,6 @@ router.route("/:gigId")
 
 //Matches with "/api/setlists/:user"
 router.route("/:user")
-  get(setlistsController.findByUser)
+  .get(setlistsController.findByUser)
   
 module.exports = router

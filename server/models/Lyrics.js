@@ -13,7 +13,7 @@ var LyricsSchema = new Schema({
     }],
     //This association to setlists was added in order to be able to search for 
     //setlist by a song in it.  This will be a future improvement
-    setlists:[{
+    setlists: [{
         type: Schema.Types.ObjectId,
         ref: "Setlist"
     }]
