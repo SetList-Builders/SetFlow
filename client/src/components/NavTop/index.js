@@ -23,7 +23,7 @@ const NavTop = () => {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#f8d78a", fontWeight: "700" }} light expand="md">
+      <Navbar style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
         <NavbarBrand href="/main">
           <img src={LogoIcon} alt="Logo Icon" width="75px"/>
           <img src={LogoText} alt="Logo Text" width="75px"/>
@@ -35,6 +35,7 @@ const NavTop = () => {
               to="/main"
               exact
               activeClassName="router-link-exact-active"
+              style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
             >
               Home
               </NavLink>
@@ -46,6 +47,7 @@ const NavTop = () => {
                 to="/edit"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
               >
                 Edit Gigs & Sets
               </NavLink>
@@ -57,6 +59,7 @@ const NavTop = () => {
                 to="/launched"
                 exact
                 activeClassName="router-link-exact-active"
+                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
               >
                 Launched Gigs
               </NavLink>
@@ -68,6 +71,7 @@ const NavTop = () => {
                 color="primary"
                 className="btn-margin"
                 onClick={() => loginWithRedirect()}
+                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
               >
                 Log in
                   </Button>

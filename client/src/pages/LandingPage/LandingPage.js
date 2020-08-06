@@ -15,7 +15,7 @@ const LandingPage = () => {
   return (
     <div>
       <Container className="mx-auto">
-        <Jumbotron style={{ marginTop: "70px", backgroundColor: "transparent", fontFamily: "Didot, serif", color: "#f8d78a" }}>
+        <Jumbotron style={{ marginTop: "70px", backgroundColor: "transparent", fontFamily: "Didot, serif", color: "#cea935" }}>
           <div className="d-flex flex-column">
             <div className="d-flex justify-content-center">
               <img src={Logo} alt="SetFlow Logo" width="281px"/>
