@@ -1,6 +1,17 @@
 const db = require("../models");
 
 module.exports = {
+    findOrCreateUserbyemail:function(req, res){
+      let email = req.body.email
+        db.User 
+          .findOneAndUpdate({username: email}, {username: email}, {upsert: true, new: true})
+          .populate("gigs")
+          .populate("setlists")
+          .then(dbModel => {res.json(dbModel)
+            console.log(dbModel)
+          })
+          .catch(err => res.status(422).json(err))
+    },
     findAll: function(req, res) {
         db.User
           .find(req.query)

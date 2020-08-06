@@ -6,7 +6,6 @@ import GigSetList from '../components/GigSetList';
 import GigInputSubmit from '../components/GigInputSubmit'
 import SetlistInputSubmit from '../components/SetlistInputSubmit'
 import AddSong from '../components/AddSong';
-import SavedSets from '../components/SavedSets';
 import AllSetList from '../components/AllSetList';
 import Songs from '../components/Songs';
 import Loading from "../components/Loading/Loading";
@@ -113,7 +112,7 @@ class CrudPage extends Component {
           <Row>
             <Col sm="4">
               <AllSetList data={this.state} />
-              <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistValue={this.state.selists.name} onChange={this.handleInput} />
+              <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistValue={this.state.setlists.name} onChange={this.handleInput} />
             </Col >
             <Col sm="4">
               {/* <Songs /> */}

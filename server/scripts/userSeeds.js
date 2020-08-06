@@ -1,9 +1,9 @@
-// const mongoose = require("mongoose")
+const mongoose = require("mongoose")
 const db = require ("../models");
 
-// mongoose.connect(
-//     process.env.MONGODB_URI || "mongodb://localhost/setflow"
-// )
+mongoose.connect(
+    process.env.MONGODB_URI || "mongodb://localhost/setflow"
+)
 
 async function seedUser(){
     const userSeed = [
@@ -14,9 +14,9 @@ async function seedUser(){
     ]
     db.User
     .deleteMany({})
-    .then(() => db.User.create(songSeed)
+    .then(() => db.User.create(userSeed)
     .then(data => {
-        console.log("records inserted!")
+        console.log("users records inserted!")
     })
     .catch(err => {
         console.log(err)
@@ -24,6 +24,6 @@ async function seedUser(){
     }))
   }
 
-// module.exports = {seedUser}
+//module.exports = {seedUser}
 seedUser()
 

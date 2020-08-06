@@ -12,4 +12,7 @@ router.route("/:id")
     .delete(usersController.remove)
     .put(usersController.update)
 
+router.route("/findorcreate")
+    .post(usersController.findOrCreateUserbyemail)
+
 module.exports = router

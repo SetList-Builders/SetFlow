@@ -6,7 +6,6 @@ mongoose.connect(
 )
 async function findSetlistForLyrics(){
     const setlists = await db.Setlist.find({})
-    console.log(setlists)
     const songSeed = [
         { 
             setlists: setlists,
@@ -23,16 +22,13 @@ async function findSetlistForLyrics(){
     .deleteMany({})
     .then(() => db.Lyrics.create(songSeed)
     .then(data => {
-        console.log(data)
-        console.log("records inserted!")
+        console.log("lyrics records inserted!")
       })
       .catch(err => {
         console.log(err)
         process.exit(1)
     }))
   }
-
-  findSetlistForLyrics()
   
   //module.exports = {findSetlistForLyrics}
-  findSetlistForLyrics()
+findSetlistForLyrics()

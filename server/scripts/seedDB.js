@@ -7,8 +7,8 @@ mongoose.connect(
 
 async function allSeeds(){
 await require("./userSeeds").seedUser()
-await require("./gigsSeeds").findUserForGig()
 await require("./setlistSeeds").findUserForSetlist()
+await require("./gigsSeeds").findUserForGig()
 await require("./lyricsSeeds").findSetlistForLyrics()
 process.exit(0)
 }
