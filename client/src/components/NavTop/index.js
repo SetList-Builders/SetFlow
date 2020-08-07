@@ -5,6 +5,7 @@ import { Button, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 // import styles from "./style.css"
 import LogoIcon from "./images/logo-icon.png"
 import LogoText from "./images/logo-text.png"
+import './style.css'
 
 const NavTop = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -23,19 +24,19 @@ const NavTop = () => {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
+      <Navbar  style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
         <NavbarBrand href="/main">
           <img src={LogoIcon} alt="Logo Icon" width="75px"/>
           <img src={LogoText} alt="Logo Text" width="75px"/>
         </NavbarBrand>
-        <Nav className="ml-auto" navbar>
+        <Nav className="ml-auto navbuttons" navbar>
           <NavItem>
             <NavLink
+              className="navbuttons"
               tag={RouterNavLink}
               to="/main"
               exact
               activeClassName="router-link-exact-active"
-              style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
             >
               Home
               </NavLink>
@@ -43,11 +44,11 @@ const NavTop = () => {
           {isAuthenticated && (
             <NavItem>
               <NavLink
+                className="navbuttons"
                 tag={RouterNavLink}
                 to="/edit"
                 exact
                 activeClassName="router-link-exact-active"
-                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
               >
                 Edit Gigs & Sets
               </NavLink>
@@ -55,11 +56,11 @@ const NavTop = () => {
           {isAuthenticated && (
             <NavItem>
               <NavLink
+                className="navbuttons"
                 tag={RouterNavLink}
                 to="/launched"
                 exact
                 activeClassName="router-link-exact-active"
-                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
               >
                 Launched Gigs
               </NavLink>
