@@ -12,15 +12,15 @@ body {
 	color: rgb(255, 255, 161);
   font-family: 'Raleway', sans-serif;
 	font-size:17px;
-	font-weight:bold;
+	font-weight:bolder;
 	padding:16px 31px;
   text-shadow:2px 2px 5px #000000;
   transition: 0.1s;
 }
 
 .myButton:hover {
-  border-color: #000000;
-  background: radial-gradient( #3d3d3d 20%, #202020 50%, #000000 100%);
+  background: linear-gradient( #202020 0%, #1b1b1b 50%, #000000 100%);
+  border-color: #111111;
   color: #f7c82d;
 }
 
@@ -31,7 +31,7 @@ body {
 
 .section {
   font-family: 'Raleway', sans-serif;
-  font-weight: bolder;
+  font-weight: thin;
   text-shadow: 4px 4px 2px #000000;
   text-align: center;
   font-size: 25px;
@@ -41,7 +41,7 @@ body {
 }
 
 .jumbo {
-  background-color: rgba(15, 15, 15, 0.5);
+  background-color: rgba(15, 15, 15, 0.75);
   border-radius: 35px;
   text-align: center;
   margin-top: 25px;
