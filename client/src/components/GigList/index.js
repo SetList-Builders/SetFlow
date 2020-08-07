@@ -5,28 +5,24 @@ import DeleteBtn from '../DeleteBtn'
 import Instructions from "../Instructions"
 
 
-
 const GigList = props => {
   console.log(props.data.gigs)
   if (props.data.gigs.length === 0) {
     return (
-      <div className="gigCard d-flex flex-column">
+      <div className="d-flex flex-column">
         <div className="d-flex justify-content-center">
-          <CardTitle>My Gigs</CardTitle>
+          <CardTitle className="title">My Gigs</CardTitle>
         </div>
-        <CardText>
-          <strong>No Gigs Added.</strong>
-        </CardText>
-
-
+          <CardText className="gigtext">
+            <strong>No Gigs Added.</strong>
+          </CardText>
       </div>
-
     )
   } else {
     return (
-      <div className="gigCard d-flex flex-column">
+      <div className="d-flex flex-column">
         <div className="d-flex justify-content-center">
-          <CardTitle>My Gigs</CardTitle>
+          <CardTitle className="title">My Gigs</CardTitle>
         </div>
         <CardText>
           <ol className="gigList">
