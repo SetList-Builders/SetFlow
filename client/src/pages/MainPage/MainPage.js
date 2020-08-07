@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import NavTop from '../components/NavTop';
-import GigList from '../components/GigList';
-import GigSetList from '../components/GigSetList'
-import AllSetList from '../components/AllSetList';
-import Songs from '../components/Songs';
+import NavTop from '../../components/NavTop';
+import GigList from '../../components/GigList';
+import GigSetList from '../../components/GigSetList'
+import AllSetList from '../../components/AllSetList';
+import Songs from '../../components/Songs';
 import { Row, Col, Container, Card } from 'reactstrap';
-import API from '../utils/API';
+import API from '../../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import Loading from "../components/Loading/Loading";
-import Instructions from "../components/Instructions"
+import Loading from "../../components/Loading/Loading";
+import Instructions from "../../components/Instructions"
+import './Main.css'
 
 class MainPage extends Component {
   state = {
@@ -28,21 +29,13 @@ class MainPage extends Component {
 
   render() {
     return (
-      <div style={{
-        backgroundColor: "black",
-        position: "fixed",
-        width: "100%",
-        height: "100%",
-        top: "0px",
-        left: "0px",
-        zIndex: "1000"
-      }}>
+      <div className="bg">
         <NavTop />
         <Container>
           <Row>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "#cea935", border: "solid 3px #9d9d9d", color: "#080939", margin: "20px" }}>
-                <GigList data={this.state} />
+              <Card className="giglist">
+                <GigList className="gigcard" data={this.state} />
                 <Instructions />
               </Card>
             </Col>
