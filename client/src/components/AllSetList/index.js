@@ -6,17 +6,21 @@ const AllSetList = props => {
   console.log(props.data.setlists)
   if (props.data.setlists.length === 0) {
     return (
-      <div className="SetlistCard">
-        <CardTitle>My Setlists</CardTitle>
+      <div className="SetlistCard d-flex flex-column">
+        <div className="d-flex justify-content-center">
+          <CardTitle>My Setlists</CardTitle>
+        </div>
         <CardText>
-          <strong>No Setlist Added.</strong>
+          <Instructions/>
         </CardText>
       </div>
     )
   } else {
     return (
-      <div className="setlistCard">
-        <CardTitle>Setlists:</CardTitle>
+      <div className="SetlistCard d-flex flex-column">
+      <div className="d-flex justify-content-center">
+        <CardTitle>My Setlists</CardTitle>
+      </div>
         <CardText>
           <ol className="setlist">
             {props.data.setlists.map(setlist => {

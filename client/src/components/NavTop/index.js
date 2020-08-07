@@ -6,6 +6,7 @@ import { Button, Navbar, NavbarBrand, Nav, NavItem, NavLink } from 'reactstrap';
 import LogoIcon from "./images/logo-icon.png"
 import LogoText from "./images/logo-text.png"
 
+
 const NavTop = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -23,10 +24,10 @@ const NavTop = () => {
 
   return (
     <div>
-      <Navbar style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
+      <Navbar style={{ backgroundColor: "#CEA935", fontFamily: "Didot, serif" }} light expand="md">
         <NavbarBrand href="/main">
-          <img src={LogoIcon} alt="Logo Icon" width="75px"/>
-          <img src={LogoText} alt="Logo Text" width="75px"/>
+          <img src={LogoIcon} alt="Logo Icon" width="50px" />
+          <img src={LogoText} alt="Logo Text" width="100px" />
         </NavbarBrand>
         <Nav className="ml-auto" navbar>
           <NavItem>
@@ -35,7 +36,7 @@ const NavTop = () => {
               to="/main"
               exact
               activeClassName="router-link-exact-active"
-              style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
+              style={{ fontWeight: "500", color: "Black", fontSize: "20px" }}
             >
               Home
               </NavLink>
@@ -47,7 +48,7 @@ const NavTop = () => {
                 to="/edit"
                 exact
                 activeClassName="router-link-exact-active"
-                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
+                style={{ fontWeight: "500", color: "Black", fontSize: "20px" }}
               >
                 Edit Gigs & Sets
               </NavLink>
@@ -59,7 +60,7 @@ const NavTop = () => {
                 to="/launched"
                 exact
                 activeClassName="router-link-exact-active"
-                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
+                style={{ fontWeight: "500", color: "Black", fontSize: "20px" }}
               >
                 Launched Gigs
               </NavLink>
@@ -77,6 +78,7 @@ const NavTop = () => {
                   </Button>
             </NavItem>
           )}
+
         </Nav>
       </Navbar>
     </div>

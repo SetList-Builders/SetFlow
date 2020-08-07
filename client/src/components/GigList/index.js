@@ -3,8 +3,7 @@ import LaunchBtn from '../LaunchBtn'
 import { CardTitle, CardText } from 'reactstrap';
 import DeleteBtn from '../DeleteBtn'
 import Instructions from "../Instructions"
-
-
+import API from '../../utils/API';
 
 const GigList = props => {
   console.log(props.data.gigs)
@@ -32,7 +31,7 @@ const GigList = props => {
           <ol className="gigList">
             {props.data.gigs.map(gig => {
               return (
-                <li className="gigItem" id={gig.name} key={gig.id} onClick={() => this.handleclick()}>{gig.name} <DeleteBtn /> <LaunchBtn />
+                <li className="gigItem" id={gig.name} key={gig.id} onClick={() => this.handleclick()}>{gig.name} <LaunchBtn />
                 </li>
               )
             })}
