@@ -9,18 +9,18 @@ body {
 	border-radius: 75px;
 	display:inline-block;
 	cursor:pointer;
-	color: beige;
+	color: rgb(255, 255, 161);
   font-family: 'Raleway', sans-serif;
 	font-size:17px;
 	font-weight:bold;
 	padding:16px 31px;
   text-shadow:2px 2px 5px #000000;
-  transition: 0.4s;
+  transition: 0.1s;
 }
 
 .myButton:hover {
-  border-color: #04101b;
-  background: linear-gradient(180deg, #051729 0%, #000000 100%);
+  border-color: #000000;
+  background: radial-gradient( #3d3d3d 20%, #202020 50%, #000000 100%);
   color: #f7c82d;
 }
 
@@ -32,18 +32,23 @@ body {
 .section {
   font-family: 'Raleway', sans-serif;
   font-weight: bolder;
+  text-shadow: 4px 4px 2px #000000;
   text-align: center;
   font-size: 25px;
-  color: beige;
+	color: rgb(255, 255, 161);
   margin-top: 10px;
   margin-bottom: 35px;
 }
 
 .jumbo {
-  background-color: rgba(29, 29, 29, 0.5);
+  background-color: rgba(15, 15, 15, 0.5);
   border-radius: 35px;
   text-align: center;
   margin-top: 25px;
   padding-top: 10px;
   padding-bottom: 15px;
+}
+
+img {
+  filter: drop-shadow(0px 0px 10px #ffa530)
 }
