@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import NavTop from '../components/NavTop';
-import { Container, Row, Col } from 'reactstrap';
+import { Container, Row, Col, Card } from 'reactstrap';
 import GigSetList from '../components/GigSetList';
 import Lyrics from '../components/Lyrics'
 import Loading from "../components/Loading/Loading";
@@ -31,8 +31,11 @@ class LaunchedPage extends Component {
         <Container>
           <Row>
             <Col sm="4">
+            <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
               <GigSetList data={this.state} />
+            </Card>
             </Col>
+
             <Col>
               <Lyrics data={this.state} />
             </Col>
