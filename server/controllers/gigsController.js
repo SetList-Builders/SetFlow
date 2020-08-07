@@ -11,7 +11,9 @@ module.exports = {
   },
   findById: function(req, res) {
     db.Gig
-      .findById({ _id: req.params.id})
+      .findById(req.params.id)
+      .populate("setlists")
+      .populate("user")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },

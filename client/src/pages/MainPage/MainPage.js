@@ -7,9 +7,15 @@ import Songs from '../../components/Songs';
 import { Row, Col, Container, Card } from 'reactstrap';
 import API from '../../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+<<<<<<< HEAD:client/src/pages/MainPage/MainPage.js
 import Loading from "../../components/Loading/Loading";
 import Instructions from "../../components/Instructions"
 import './Main.css'
+=======
+import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
+import Loading from "../components/Loading/Loading";
+import Instructions from "../components/Instructions"
+>>>>>>> master:client/src/pages/MainPage.js
 
 class MainPage extends Component {
   state = {
@@ -19,18 +25,29 @@ class MainPage extends Component {
   }
 
   componentDidMount() {
-    API.getGigs()
-      .then(res => this.setState({ gigs: res.data }))
-      .catch(err => console.log(err));
-    API.getSetlists()
-      .then(res => this.setState({ setlists: res.data }))
-      .catch(err => console.log(err))
-  }
+
+    //const { user } = useAuth0();
+    API.findOrCreateUserbyemail(this.props.email)
+      .then(res => {this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
+    })
+    // API.getGigs()
+    //   .then(res => {this.setState({ gigs: res.data })
+    //   console.log(this.state)
+    // })
+    //   .catch(err => console.log(err));
+    // API.getSetlists()
+    //   .then(res => {this.setState({ setlists: res.data })
+    //   console.log(this.state)
+    // })
+    //   .catch(err => console.log(err))
+  
+}
 
   render() {
     return (
       <div className="bg">
         <NavTop />
+        <Auth0Profile></Auth0Profile>
         <Container>
           <Row>
             <Col sm="4">

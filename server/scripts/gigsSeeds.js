@@ -6,7 +6,7 @@ mongoose.connect(
 )
 
 async function findUserForGig() {
-  const user = await db.User.findOne({ username: "User1" })
+  const user = await db.User.findOne({ username: "zjhassler@gmail.com" })
   const setlists = await db.Setlist.find({})
   const gigSeed = [
     {
@@ -19,7 +19,7 @@ async function findUserForGig() {
     .deleteMany({})
     .then(() => db.Gig.create(gigSeed)
       .then(data => {
-        console.log("records inserted!")
+        console.log("gigs records inserted!")
       })
       .catch(err => {
         console.log(err)
@@ -29,4 +29,6 @@ async function findUserForGig() {
 
 findUserForGig()
 
+
+//module.exports = { findUserForGig }
 

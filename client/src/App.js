@@ -18,11 +18,14 @@ const App = () => {
   if (isLoading) {
     return <Loading />;
   } */
+  const { user } = useAuth0();
   return (
     <Router history={history}>
       <Switch>
         <Route exact path="/" component={LandingPage} />
-        <Route path="/main" component={MainPage} />
+        <Route path="/main" >
+          <MainPage email={user ? user.email : null} />
+        </Route>
         <Route path="/edit" component={CrudPage} />
         <Route path="/launched" component={LaunchedPage} />
       </Switch>
