@@ -2,14 +2,14 @@ const db = require("../models");
 
 // Defining methods for the gigsController
 module.exports = {
-  findAll: function(req, res) {
+  findAll: function (req, res) {
     db.Gig
       .find(req.query)
-    //   .sort({ date: -1 })
+      //   .sort({ date: -1 })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findById: function(req, res) {
+  findById: function (req, res) {
     db.Gig
       .findById(req.params.id)
       .populate("setlists")
@@ -17,25 +17,27 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  findByUser: function(req, res) {
+  findByUser: function (req, res) {
     db.Gig
-      .findByUser({user: req.params.user})
+      .findByUser({ user: req.params.user })
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
-  create: function(req, res) {
+  create: function (req, res) {
+    console.log("create Controller:", req.body)
+    const gig = { name: req.body.name, user: req.body.user }
     db.Gig
-      .create(req.body)
+      .create(gig)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  update: function(req, res) {
+  update: function (req, res) {
     db.Gig
       .findOneAndUpdate({ _id: req.params.id }, req.body)
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  remove: function(req, res) {
+  remove: function (req, res) {
     db.Gig
       .findById({ _id: req.params.id })
       .then(dbModel => dbModel.remove())

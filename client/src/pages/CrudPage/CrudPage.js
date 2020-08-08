@@ -48,25 +48,46 @@ class CrudPage extends Component {
 
   handleInput = event => {
     const { name, value } = event.target;
+    console.log("EventTarget:", event.target)
     this.setState({
       [name]: value
     })
+    console.log("name:", name, "value:", value)
   }
 
   handleGigSubmit = event => {
     event.preventDefault();
-    const newGig = {gigName: this.state.gigName}
-    console.log(newGig)
-    const allGigs = {...this.state.gigs, newGig}
+    // API.saveGig
+    const { user } = useAuth0();
+    const newGig = { gigName: this.state.gigName, user: user.email }
+    const newAllGigs = { ...this.state.gigs, newGig }
     this.setState({
-      gigName: "",
-      gigs: allGigs
+      // gigName: '', //can't run an empty string until it goes into database
+      gigs: newAllGigs
     })
-    API.saveGig({
-      gigs: this.state.gigs
-    })
-      .then(res => this.loadGigs())
+    API.saveGig({ name: this.state.gigName, user: "5f2ef41e713a275be820e3c6" })
+      .then(res => console.log("response for HandleSubmit:", res.data))
+      // .then(res => this.setState({ gigName: res.data }))
+      // .then(res => this.loadGigs())
       .catch(err => console.log(err));
+
+    // API.create({
+    //   gigs: this.state.
+    // })
+    //   .then(res => this.loadGigs())
+    //   .catch(err => console.log(err));
+    // const newGig = { gigName: this.state.gigName }
+    // console.log("this is new gig name:", newGig)
+    // const allGigs = { ...this.state.gigs, newGig }
+    // this.setState({
+    //   gigName: "",
+    //   gigs: allGigs
+    // })
+    // API.saveGig({
+    //   gigs: this.state.gigs
+    // })
+    //   .then(res => this.loadGigs())
+    //   .catch(err => console.log(err));
   }
 
   handleSetlistSubmit = event => {
@@ -113,7 +134,7 @@ class CrudPage extends Component {
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <GigList data={this.state} />
                 <div className="btn-title">Add Gig:</div>
-                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigValue={this.state.gigName} onChange={this.handleInput} />
+                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigName={this.state.gigName} onChange={this.handleInput} />
               </Card>
             </Col >
             <Col sm="4">

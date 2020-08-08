@@ -1,135 +1,137 @@
 import axios from "axios"
 // let artist = 
- 
+
 export default {
-    // getAPILyrics: function(artist, song, APIKey) {
-    //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
-    // },
+  // getAPILyrics: function(artist, song, APIKey) {
+  //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
+  // },
 
-    //Users
+  //Users
 
-    //Get all users
-    findOrCreateUserbyemail: function(email){
-        return axios.post("/api/users/findorcreate", {email: email})
-    },
-    getUsers: function() {
-        return axios.get("/api/users/")
-    },
+  //Get all users
+  findOrCreateUserbyemail: function (email) {
+    return axios.post("/api/users/findorcreate", { email: email })
+  },
+  getUsers: function () {
+    return axios.get("/api/users/")
+  },
 
-    //Get specific user by id
-    getUser: function(id) {
-        return axios.get("/api/users/" + id)
-    },
-    
-    //Save user to database
-    saveUser: function(savedUsers) {
-        return axios.post("/api/users" + savedUsers)
-    },
+  //Get specific user by id
+  getUser: function (id) {
+    return axios.get("/api/users/" + id)
+  },
 
-    //Delete specific user by id
-    deleteUser: function(id) {
-        return axios.delete("/api/users/" + id)
-    },
+  //Save user to database
+  saveUser: function (savedUsers) {
+    return axios.post("/api/users" + savedUsers)
+  },
 
-    //Update specific user by id
-    updateUser: function(id) {
-        return axios.put("/api/users/" + id)
-    },
+  //Delete specific user by id
+  deleteUser: function (id) {
+    return axios.delete("/api/users/" + id)
+  },
 
-    //Gigs
-    
-    //Get all gigs for a specific user
-    getGigsByUser: function(user) {
-        return axios.get("/api/gigs/" + user) 
-    },
+  //Update specific user by id
+  updateUser: function (id) {
+    return axios.put("/api/users/" + id)
+  },
 
-    //Get all gigs
-    getGigs: function() {
-        return axios.get("/api/gigs/")
-    },
+  //Gigs
 
-    //Get specific gig by id
-    getGig: function(id) {
-        return axios.get("/api/gigs/" + id)
-    },
+  //Get all gigs for a specific user
+  getGigsByUser: function (user) {
+    return axios.get("/api/gigs/" + user)
+  },
 
-    //Save gig to the database
-    saveGig: function(savedGigs) {
-        return axios.post("/api/gigs/", savedGigs)
-    },
+  //Get all gigs
+  getGigs: function () {
+    return axios.get("/api/gigs/")
+  },
 
-    //Delete gig by id
-    deleteGig: function(id) {
-        return axios.delete("/api/gigs/" + id)
-    },
+  //Get specific gig by id
+  getGig: function (id) {
+    return axios.get("/api/gigs/" + id)
+  },
 
-    //Update gig by id
-    updateGig: function(id) {
-        return axios.put("/api/gigs/" + id)
-    },
+  //Save gig to the database
+  saveGig: function (savedGig) {
+    console.log("API.JS savedGig", savedGig)
+    return axios.post("/api/gigs/", savedGig)
+  },
 
-    //Setlists
+  //Delete gig by id
+  deleteGig: function (id) {
 
-    //Get all setlists for a specific user
-    getSetlistsByUser: function(user) {
-        return axios.get("api/setlists/" + user)
-    },
+    return axios.delete("/api/gigs/" + id)
+  },
 
-    //Get all setlists for a specific gig
-    getSetlistsByGig: function(gigId) {
-        return axios.get("/api/setlists/" + gigId) 
-    },
+  //Update gig by id
+  updateGig: function (id) {
+    return axios.put("/api/gigs/" + id)
+  },
 
-    //Get all setlists
-    getSetlists: function() {
-        return axios.get("/api/setlists/")
-    },
+  //Setlists
 
-    //Get specific setlist by id
-    getSetlist: function(id) {
-        return axios.get("/api/setlists/" + id)
-    },
+  //Get all setlists for a specific user
+  getSetlistsByUser: function (user) {
+    return axios.get("api/setlists/" + user)
+  },
 
-    //Save setlist to the database
-    saveSetlist: function(savedSetlists) {
-        return axios.post("/api/setlists/", savedSetlists)
-    },
+  //Get all setlists for a specific gig
+  getSetlistsByGig: function (gigId) {
+    return axios.get("/api/setlists/" + gigId)
+  },
 
-    //Delete setlist by id
-    deleteSetlist: function(id) {
-        return axios.delete("/api/setlists/" + id)
-    },
+  //Get all setlists
+  getSetlists: function () {
+    return axios.get("/api/setlists/")
+  },
 
-    //Update setlist by id
-    updateSetlist: function(id) {
-        return axios.put("/api/setlist/" + id)
-    },
+  //Get specific setlist by id
+  getSetlist: function (id) {
+    return axios.get("/api/setlists/" + id)
+  },
 
-    //Songs
+  //Save setlist to the database
+  saveSetlist: function (savedSetlists) {
+    return axios.post("/api/setlists/", savedSetlists)
+  },
 
-    //Get all songs in a specific setlist
-    getLyricsBySetlist: function(setlistId) {
-        return axios.get("/api/lyrics/" + setlistId) 
-    },
+  //Delete setlist by id
+  deleteSetlist: function (id) {
+    return axios.delete("/api/setlists/" + id)
+  },
 
-    //Get all songs
-    getLyrics: function() {
-        return axios.get("/api/lyrics/")
-    },
+  //Update setlist by id
+  updateSetlist: function (id) {
+    return axios.put("/api/setlist/" + id)
+  },
 
-    //Get specific song by id
-    getGigLyrics: function(id) {
-        return axios.get("/api/lyrics/" + id)
-    },
+  //Songs
 
-    //Save song to the database
-    saveLyrics: function(savedSongs) {
-        return axios.post("/api/lyrics/", savedSongs)
-    },
+  //Get all songs in a specific setlist
+  getLyricsBySetlist: function (setlistId) {
+    return axios.get("/api/lyrics/" + setlistId)
+  },
 
-    //Delete song by id
-    deleteLyrics: function(id) {
-        return axios.delete("/api/lyrics/" + id)
-    },
+  //Get all songs
+  getLyrics: function () {
+    return axios.get("/api/lyrics/")
+  },
+
+  //Get specific song by id
+  getGigLyrics: function (id) {
+    return axios.get("/api/lyrics/" + id)
+  },
+
+  //Save song to the database
+  saveLyrics: function (savedSongs) {
+    return axios.post("/api/lyrics/", savedSongs)
+  },
+
+  //Delete song by id
+  deleteLyrics: function (id) {
+    return axios.delete("/api/lyrics/" + id)
+  },
 
 }
