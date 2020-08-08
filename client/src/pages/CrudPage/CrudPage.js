@@ -26,6 +26,11 @@ class CrudPage extends Component {
   }
 
   componentDidMount() {
+
+    API.findOrCreateUserbyemail(this.props.email)
+      .then(res => {
+        this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
+      })
     API.getGigs()
       .then(res => {
         this.setState({ gigs: res.data })
