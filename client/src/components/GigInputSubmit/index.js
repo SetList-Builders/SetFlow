@@ -13,7 +13,7 @@ const GigInputSubmit = props => {
   return (
     <div>
       <InputGroup className="mb-3">
-        <Input placeholder="Name" gigValue={props.value} />
+        <Input placeholder="Name" gigValue={props.gigValue} onChange={props.onChange}/>
         <InputGroupAddon addonType="prepend"><Button onClick={props.gigSubmit}>Submit</Button></InputGroupAddon>
       </InputGroup>
     </div>
