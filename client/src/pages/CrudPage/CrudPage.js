@@ -16,6 +16,10 @@ import API from '../../utils/API';
 
 class CrudPage extends Component {
   state = {
+    gigName: "",
+    setlistName: "",
+    songTitle: "",
+    songArtist: "",
     gigs: [],
     setlists: [],
     songs: []
@@ -51,7 +55,14 @@ class CrudPage extends Component {
 
   handleGigSubmit = event => {
     event.preventDefault();
-    API.create({
+    const newGig = {gigName: this.state.gigName}
+    console.log(newGig)
+    const allGigs = {...this.state.gigs, newGig}
+    this.setState({
+      gigName: "",
+      gigs: allGigs
+    })
+    API.saveGig({
       gigs: this.state.gigs
     })
       .then(res => this.loadGigs())
@@ -102,7 +113,7 @@ class CrudPage extends Component {
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <GigList data={this.state} />
                 <div className="btn-title">Add Gig:</div>
-                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigValue={this.state.gigs.name} onChange={this.handleInput} />
+                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigValue={this.state.gigName} onChange={this.handleInput} />
               </Card>
             </Col >
             <Col sm="4">
