@@ -7,6 +7,7 @@ import LogoIcon from "./images/logo-icon.png"
 import LogoText from "./images/logo-text.png"
 import './style.css'
 
+
 const NavTop = () => {
   const [isOpen, setIsOpen] = useState(false);
   const {
@@ -26,8 +27,8 @@ const NavTop = () => {
     <div>
       <Navbar  style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
         <NavbarBrand href="/main">
-          <img src={LogoIcon} alt="Logo Icon" width="75px"/>
-          <img src={LogoText} alt="Logo Text" width="75px"/>
+          <img src={LogoIcon} alt="Logo Icon" width="50px" />
+          <img src={LogoText} alt="Logo Text" width="100px" />
         </NavbarBrand>
         <Nav className="ml-auto navbuttons" navbar>
           <NavItem>
@@ -36,8 +37,7 @@ const NavTop = () => {
               tag={RouterNavLink}
               to="/main"
               exact
-              activeClassName="router-link-exact-active"
-            >
+              activeClassName="router-link-exact-active">
               Home
               </NavLink>
           </NavItem>
@@ -48,8 +48,7 @@ const NavTop = () => {
                 tag={RouterNavLink}
                 to="/edit"
                 exact
-                activeClassName="router-link-exact-active"
-              >
+                activeClassName="router-link-exact-active">
                 Edit Gigs & Sets
               </NavLink>
             </NavItem>)}
@@ -60,8 +59,7 @@ const NavTop = () => {
                 tag={RouterNavLink}
                 to="/launched"
                 exact
-                activeClassName="router-link-exact-active"
-              >
+                activeClassName="router-link-exact-active">
                 Launched Gigs
               </NavLink>
             </NavItem>)}
@@ -72,12 +70,12 @@ const NavTop = () => {
                 color="primary"
                 className="btn-margin"
                 onClick={() => loginWithRedirect()}
-                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}
-              >
+                style={{ fontWeight: "500", color: "#cea935", fontSize: "20px" }}>
                 Log in
-                  </Button>
+                </Button>
             </NavItem>
           )}
+
         </Nav>
       </Navbar>
     </div>

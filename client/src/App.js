@@ -8,6 +8,7 @@ import LaunchedPage from './pages/LaunchedPage';
 import { useAuth0 } from "@auth0/auth0-react";
 import history from "./utils/history";
 
+
 const App = () => {
   /*const { isLoading, error } = useAuth0();
 
