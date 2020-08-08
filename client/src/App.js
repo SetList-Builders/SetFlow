@@ -27,7 +27,9 @@ const App = () => {
         <Route path="/main" >
           <MainPage email={user ? user.email : null} />
         </Route>
-        <Route path="/edit" component={CrudPage} />
+        <Route path="/edit" >
+          <CrudPage email={user ? user.email : null} />
+        </Route>
         <Route path="/launched" component={LaunchedPage} />
       </Switch>
     </Router>

@@ -7,6 +7,7 @@ import Songs from '../../components/Songs';
 import { Row, Col, Container, Card } from 'reactstrap';
 import API from '../../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
+import Auth0Profile from '../../components/Auth0Provider/Auth0Profile'
 import Loading from "../../components/Loading/Loading";
 import Instructions from "../../components/Instructions"
 import './Main.css'
