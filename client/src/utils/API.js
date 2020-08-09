@@ -77,7 +77,7 @@ export default {
 
     //Get all setlists for a specific gig
     getSetlistsByGig: function(gigId) {
-        return axios.get("/api/setlists/" + gigId) 
+        return axios.get("/api/gigs/" + gigId) 
     },
 
     //Get all setlists
@@ -109,7 +109,7 @@ export default {
 
     //Get all songs in a specific setlist
     getLyricsBySetlist: function(setlistId) {
-        return axios.get("/api/lyrics/" + setlistId) 
+        return axios.get("/api/setlists/" + setlistId) 
     },
 
     //Get all songs
