@@ -5,7 +5,7 @@ mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/setflow"
 )
 async function findUserForSetlist() {
-  const user = await db.User.findOne({ username: "mezamic000@gmail.com" })
+  const user = await db.User.findOne({ username: "zjhassler@gmail.com" })
   const allSetlists = await db.Setlist.find({})
   const allGigs = await db.Gig.find({})
 
@@ -14,11 +14,11 @@ async function findUserForSetlist() {
   user.save()
   const setlistSeed = [
     {
-      user: user,
+      user: user.username,
       name: "Setlist 1",
     },
     {
-      user: user,
+      user: user.username,
       name: "Setlist 2",
     }
   ]

@@ -6,11 +6,11 @@ mongoose.connect(
 )
 
 async function findUserForGig() {
-  const user = await db.User.findOne({ username: "mezamic000@gmail.com" })
+  const user = await db.User.findOne({ username: "zjhassler@gmail.com" })
   const setlists = await db.Setlist.find({})
   const gigSeed = [
     {
-      user: user,
+      user: user.username,
       name: "Gig 1",
       setlists: setlists
     }
