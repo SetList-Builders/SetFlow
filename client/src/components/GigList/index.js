@@ -6,8 +6,8 @@ import Instructions from "../Instructions"
 import API from '../../utils/API';
 
 const GigList = props => {
-  console.log(props.data.gigs)
-  if (props.data.gigs.length === 0) {
+  console.log(`GigList Component: ${props}`)
+  if (!props.gigs) {
     return (
       <div className="d-flex flex-column">
         <div className="d-flex justify-content-center">
@@ -25,14 +25,12 @@ const GigList = props => {
           <CardTitle className="title">My Gigs</CardTitle>
         </div>
         <CardText>
-          <ol className="gigList">
-            {props.data.gigs.map(gig => {
+            {props.gigs.map(gig => {
               return (
-                <li className="gigItem" id={gig.name} key={gig.id} onClick={() => this.handleclick()}>{gig.name} <LaunchBtn />
+                <li className="gigItem" id={gig.name} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name} <LaunchBtn />
                 </li>
               )
             })}
-          </ol>
         </CardText>
 
       </div>
