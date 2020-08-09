@@ -9,11 +9,11 @@ import {
 
 
 const GigInputSubmit = props => {
-
+  console.log("Props-GigInputSubmit", props)
   return (
     <div>
       <InputGroup className="mb-3">
-        <Input placeholder="Name" gigValue={props.gigValue} onChange={props.onChange}/>
+        <Input placeholder="Name" name="gigName" value={props.gigName} onChange={props.onChange} />
         <InputGroupAddon addonType="prepend"><Button onClick={props.gigSubmit}>Submit</Button></InputGroupAddon>
       </InputGroup>
     </div>
