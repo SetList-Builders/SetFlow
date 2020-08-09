@@ -94,6 +94,7 @@ export default {
 
   //Save setlist to the database
   saveSetlist: function (savedSetlists) {
+    console.log("API.JS savedSetlists", savedSetlists)
     return axios.post("/api/setlists/", savedSetlists)
   },
 
