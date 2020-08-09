@@ -4,9 +4,8 @@ var Schema = mongoose.Schema
 
 var setlistSchema = new Schema({
     user:{
-        type: Schema.Types.ObjectId,
-        //required: true,
-        ref: "User"
+        type: String,
+        required: true
     },
     name:{
         type: String,
