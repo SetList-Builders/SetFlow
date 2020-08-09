@@ -7,7 +7,6 @@ import Songs from '../../components/Songs';
 import { Row, Col, Container, Card } from 'reactstrap';
 import API from '../../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
-import Auth0Profile from '../../components/Auth0Provider/Auth0Profile'
 import Loading from "../../components/Loading/Loading";
 import Instructions from "../../components/Instructions"
 import './Main.css'
@@ -16,8 +15,24 @@ import Auth0Profile from '../../components/Auth0Provider/Auth0Profile';
 class MainPage extends Component {
   state = {
     gigs: [],
+    currentGig: null,
+    currentSetlist: null,
     setlists: [],
     songs: []
+  }
+
+  handleGigClick = (gigId) => {
+    API.getSetlistsByGig(gigId)
+      .then(res => {this.setState({ currentGig: res.data })
+    })
+    .catch(err => console.log(err))
+  }
+
+  handleSetlistClick = (setlistId) => {
+    API.getLyricsBySetlist(setlistId)
+      .then(res => {this.setState({ currentSetlist: res.data })
+    })
+    .catch(err => console.log(err))
   }
 
   componentDidMount() {
@@ -26,12 +41,13 @@ class MainPage extends Component {
     API.findOrCreateUserbyemail(this.props.email)
       .then(res => {this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
     })
-    // API.getGigs()
+    .catch(err => console.log(err))
+    // API.getGigsByUser()
     //   .then(res => {this.setState({ gigs: res.data })
     //   console.log(this.state)
     // })
     //   .catch(err => console.log(err));
-    // API.getSetlists()
+    // API.getSetlistsByUser()
     //   .then(res => {this.setState({ setlists: res.data })
     //   console.log(this.state)
     // })
@@ -48,13 +64,13 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
-                <GigList className="gigcard" data={this.state} />
+                <GigList className="gigcard" handleGigClick={this.handleGigClick}  gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
               <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #cea935", borderBottom: "solid 4px #cea935", borderLeft: "solid 3px #080939", borderRight: "solid 3px #080939", color: "#cea935", margin: "20px" }}>
-                <GigSetList data={this.state} />
+                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} />
               </Card>
             </Col>
             <Col sm="4">
@@ -66,7 +82,7 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #9d9d9d", color: "#cea935", margin: "20px" }}>
-                <AllSetList data={this.state} />
+                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClick={this.handleSetlistClick} setlists={this.state.setlists} />
                 <Instructions />
               </Card>
 
