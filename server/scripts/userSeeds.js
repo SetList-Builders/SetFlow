@@ -8,7 +8,7 @@ mongoose.connect(
 async function seedUser(){
     const userSeed = [
         {
-            username: "User1",
+            username: "melaniejindali@icloud.com",
             token: ""
         }
     ]
@@ -17,6 +17,7 @@ async function seedUser(){
     .then(() => db.User.create(userSeed)
     .then(data => {
         console.log("users records inserted!")
+        process.exit(0)
     })
     .catch(err => {
         console.log(err)
