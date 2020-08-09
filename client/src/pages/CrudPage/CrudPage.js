@@ -58,14 +58,14 @@ class CrudPage extends Component {
   handleGigSubmit = event => {
     event.preventDefault();
     // API.saveGig
-    const { user } = useAuth0();
-    const newGig = { gigName: this.state.gigName, user: user.email }
+    //const { user } = useAuth0();
+    const newGig = { gigName: this.state.gigName, user: this.props.email }
     const newAllGigs = { ...this.state.gigs, newGig }
     this.setState({
       // gigName: '', //can't run an empty string until it goes into database
       gigs: newAllGigs
     })
-    API.saveGig({ name: this.state.gigName, user: "5f2ef41e713a275be820e3c6" })
+    API.saveGig({ name: this.state.gigName, user: this.props.email })
       .then(res => console.log("response for HandleSubmit:", res.data))
       // .then(res => this.setState({ gigName: res.data }))
       // .then(res => this.loadGigs())
@@ -92,10 +92,16 @@ class CrudPage extends Component {
 
   handleSetlistSubmit = event => {
     event.preventDefault();
-    API.create({
-      setlists: this.state.setlists
+    const newSetlist = { setlistName: this.state.setlistName, user: this.props.email }
+    const newAllSetlists = { ...this.state.setlists, newSetlist }
+    this.setState({
+      // gigName: '', //can't run an empty string until it goes into database
+      gigs: newAllSetlists
     })
-      .then(res => this.loadSetlists())
+      API.saveSetlist({ name: this.state.setlistName, user: this.props.email })
+      .then(res => console.log("response for HandleSubmit:", res.data))
+      // .then(res => this.setState({ gigName: res.data }))
+      // .then(res => this.loadGigs())
       .catch(err => console.log(err));
   }
 
@@ -116,6 +122,7 @@ class CrudPage extends Component {
   }
 
   render() {
+    console.log("THis is the CRUD email prop from auth0",this.props.email)
     return (
       <div style={{
         backgroundColor: "black",
@@ -152,7 +159,7 @@ class CrudPage extends Component {
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <AllSetList data={this.state} />
-                <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistValue={this.state.setlists.name} onChange={this.handleInput} />
+                <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistName={this.state.setlistName} onChange={this.handleInput} />
               </Card>
 
             </Col >
