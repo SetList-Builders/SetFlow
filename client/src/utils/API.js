@@ -1,6 +1,6 @@
 import axios from "axios"
 // let artist = 
- 
+
 export default {
     // getAPILyrics: function(artist, song, APIKey) {
     //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
