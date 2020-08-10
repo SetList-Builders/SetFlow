@@ -8,7 +8,7 @@ mongoose.connect(
 async function seedUser() {
   const userSeed = [
     {
-      username: "mezamic000@gmail.com",
+      username: "zjhassler@gmail.com",
       token: ""
     }
   ]
