@@ -56,17 +56,17 @@ class CrudPage extends Component {
   handleGigSubmit = event => {
     event.preventDefault();
     const newGig = {gigName: this.state.gigName}
-    console.log(newGig)
+    console.log("New Gig: " + newGig)
     const allGigs = {...this.state.gigs, newGig}
-    this.setState({
-      gigName: "",
-      gigs: allGigs
-    })
     API.saveGig({
       gigs: this.state.gigs
     })
       .then(res => this.loadGigs())
       .catch(err => console.log(err));
+    this.setState({
+      gigName: "",
+      gigs: allGigs
+    })
   }
 
   handleSetlistSubmit = event => {
