@@ -10,7 +10,7 @@ async function findUserForGig() {
   const setlists = await db.Setlist.find({})
   const gigSeed = [
     {
-      user: user,
+      user: user.username,
       name: "Gig 1",
       setlists: [setlists[0]]
     }

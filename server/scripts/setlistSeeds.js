@@ -14,11 +14,11 @@ async function findUserForSetlist(){
   user.save()
   const setlistSeed = [
     {
-      user: user,
+      user: user.username,
       name: "Setlist 1",
     },
     {
-      user: user,
+      user: user.username,
       name: "Setlist 2",
     }
   ]

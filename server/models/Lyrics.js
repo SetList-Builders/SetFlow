@@ -18,10 +18,9 @@ var LyricsSchema = new Schema({
         ref: "Setlist"
     }],
     user:{
-        type: Schema.Types.ObjectId,
-        required: true,
-        ref: "User"
-    },
+        type: String,
+        required: true
+    }
 });
 
 var Lyrics = mongoose.model("Lyrics", LyricsSchema);
