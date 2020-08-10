@@ -66,3 +66,7 @@ SetlistArray
     -Display all available songs in DB (right side)?
     -Display songarray of setlist (left side)
     - Rerender page with Setlists in Gig with each onClick changes
+
+
+    Create GigsController:
+

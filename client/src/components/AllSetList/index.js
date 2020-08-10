@@ -3,8 +3,8 @@ import { Card, CardTitle, CardText, } from 'reactstrap';
 import Instructions from "../Instructions"
 
 const AllSetList = props => {
-  console.log(props.data.setlists)
-  if (props.data.setlists.length === 0) {
+console.log("AllSetList", props)
+  if (!props.setlists) {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
@@ -22,15 +22,13 @@ const AllSetList = props => {
         <CardTitle>My Setlists</CardTitle>
       </div>
         <CardText>
-          <ol className="setlist">
-            {props.data.setlists.map(setlist => {
+            {props.setlists.map(setlist => {
               return (
-                <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.name}
+                <li id={setlist.id} key={setlist.id} onClick={() => props.handleSetlistClick(setlist._id)}> {setlist.name}
                 </li>
               )
-            })}
-          </ol>
-        </CardText>
+            })}        
+            </CardText>
       </div>
     )
   }

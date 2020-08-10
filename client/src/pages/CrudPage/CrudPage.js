@@ -34,47 +34,74 @@ class CrudPage extends Component {
     API.getGigs()
       .then(res => {
         this.setState({ gigs: res.data })
-        console.log(this.state)
+        console.log(` getting gigs: ${this.state.gigs}`)
       })
 
       .catch(err => console.log(err));
     API.getSetlists()
       .then(res => {
         this.setState({ setlists: res.data })
-        console.log(this.state)
+        console.log(` getting setlists: ${this.state.setlists}`)
       })
       .catch(err => console.log(err))
   }
 
   handleInput = event => {
     const { name, value } = event.target;
+    console.log("EventTarget:", event.target)
     this.setState({
       [name]: value
     })
+    console.log("name:", name, "value:", value)
   }
 
   handleGigSubmit = event => {
     event.preventDefault();
-    const newGig = {gigName: this.state.gigName}
-    console.log("New Gig: " + newGig)
-    const allGigs = {...this.state.gigs, newGig}
-    API.saveGig({
-      gigs: this.state.gigs
-    })
-      .then(res => this.loadGigs())
-      .catch(err => console.log(err));
+    // API.saveGig
+    //const { user } = useAuth0();
+    const newGig = { gigName: this.state.gigName, user: this.props.email }
+    const newAllGigs = { ...this.state.gigs, newGig }
     this.setState({
-      gigName: "",
-      gigs: allGigs
+      // gigName: '', //can't run an empty string until it goes into database
+      gigs: newAllGigs
     })
+    API.saveGig({ name: this.state.gigName, user: this.props.email })
+      .then(res => console.log("response for HandleSubmit:", res.data))
+      // .then(res => this.setState({ gigName: res.data }))
+      // .then(res => this.loadGigs())
+      .catch(err => console.log(err));
+
+    // API.create({
+    //   gigs: this.state.
+    // })
+    //   .then(res => this.loadGigs())
+    //   .catch(err => console.log(err));
+    // const newGig = { gigName: this.state.gigName }
+    // console.log("this is new gig name:", newGig)
+    // const allGigs = { ...this.state.gigs, newGig }
+    // this.setState({
+    //   gigName: "",
+    //   gigs: allGigs
+    // })
+    // API.saveGig({
+    //   gigs: this.state.gigs
+    // })
+    //   .then(res => this.loadGigs())
+    //   .catch(err => console.log(err));
   }
 
   handleSetlistSubmit = event => {
     event.preventDefault();
-    API.create({
-      setlists: this.state.setlists
+    const newSetlist = { setlistName: this.state.setlistName, user: this.props.email }
+    const newAllSetlists = { ...this.state.setlists, newSetlist }
+    this.setState({
+      // gigName: '', //can't run an empty string until it goes into database
+      gigs: newAllSetlists
     })
-      .then(res => this.loadSetlists())
+      API.saveSetlist({ name: this.state.setlistName, user: this.props.email })
+      .then(res => console.log("response for HandleSubmit:", res.data))
+      // .then(res => this.setState({ gigName: res.data }))
+      // .then(res => this.loadGigs())
       .catch(err => console.log(err));
   }
 
@@ -95,6 +122,7 @@ class CrudPage extends Component {
   }
 
   render() {
+    console.log("THis is the CRUD email prop from auth0",this.props.email)
     return (
       <div style={{
         backgroundColor: "black",
@@ -113,7 +141,7 @@ class CrudPage extends Component {
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <GigList data={this.state} />
                 <div className="btn-title">Add Gig:</div>
-                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigValue={this.state.gigName} onChange={this.handleInput} />
+                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigName={this.state.gigName} onChange={this.handleInput} />
               </Card>
             </Col >
             <Col sm="4">
@@ -131,7 +159,7 @@ class CrudPage extends Component {
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
                 <AllSetList data={this.state} />
-                <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistValue={this.state.setlists.name} onChange={this.handleInput} />
+                <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistName={this.state.setlistName} onChange={this.handleInput} />
               </Card>
 
             </Col >

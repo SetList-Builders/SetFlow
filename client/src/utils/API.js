@@ -1,6 +1,6 @@
 import axios from "axios"
 // let artist = 
- 
+
 export default {
     // getAPILyrics: function(artist, song, APIKey) {
     //     return axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + REACT_APP_API_KEY)
@@ -77,7 +77,7 @@ export default {
 
     //Get all setlists for a specific gig
     getSetlistsByGig: function(gigId) {
-        return axios.get("/api/setlists/" + gigId) 
+        return axios.get("/api/gigs/" + gigId) 
     },
 
     //Get all setlists

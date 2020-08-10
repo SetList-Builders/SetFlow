@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+.bg {
+  background: linear-gradient( #000000 50%, #3b3b3b 100%);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1;
+}
+
+.card-title {
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  background: linear-gradient( #444444 0%, #1b1b1b 50%, #000000 100%);
+	color: #ffffff;
+  position: relative;
+  top: 0%; right: 0%; left: 0%;
+  padding: 5px;
+  text-align: center;
+  margin-top: 0;
+}
+
+.giglist {
+  color: #000000; 
+  margin: 20px;
+  padding: 1rem;
+}
+
+.giglist.card {
+  border-radius: 0px;
+  border: solid 10px #b3b3b3;
+  outline: solid 2px #e0e0e0;
+}
+
+.gigtext{
+  margin-top: 40px;
+}
