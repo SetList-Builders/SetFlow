@@ -70,26 +70,26 @@ class MainPage extends Component {
               </Card>
             </Col>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #cea935", borderBottom: "solid 4px #cea935", borderLeft: "solid 3px #080939", borderRight: "solid 3px #080939", color: "#cea935", margin: "20px" }}>
+              <Card className="gigsetlist">
                 <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} />
               </Card>
             </Col>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #080939", borderBottom: "solid 4px #080939", borderLeft: "solid 3px #cea935", borderRight: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-
+              <Card className="setlistsongs">
+                <Songs currentSetlist={this.state.currentSetlist} />
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
-              <Card body style={{ backgroundColor: "#080939", border: "solid 3px #9d9d9d", color: "#cea935", margin: "20px" }}>
+              <Card className="allsetlists">
                 <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClick={this.handleSetlistClick} setlists={this.state.setlists} />
                 <Instructions />
               </Card>
 
             </Col>
             <Col>
-              <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #080939", borderBottom: "solid 4px #080939", borderLeft: "solid 3px #cea935", borderRight: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
+              <Card className="setlistsongs">
                 <Songs currentSetlist={this.state.currentSetlist} />
               </Card>
 
