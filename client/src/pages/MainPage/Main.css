@@ -16,10 +16,11 @@
   font-weight: bold;
   background: linear-gradient( #444444 0%, #1b1b1b 50%, #000000 100%);
 	color: #ffffff;
-  position: absolute;
+  position: relative;
   top: 0%; right: 0%; left: 0%;
   padding: 5px;
   text-align: center;
+  margin-top: 0;
 }
 
 .giglist {

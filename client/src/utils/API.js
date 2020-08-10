@@ -109,7 +109,7 @@ export default {
 
     //Get all songs in a specific setlist
     getLyricsBySetlist: function(setlistId) {
-        return axios.get("/api/setlists/" + setlistId) 
+        return axios.get("/api/lyrics/" + setlistId) 
     },
 
     //Get all songs

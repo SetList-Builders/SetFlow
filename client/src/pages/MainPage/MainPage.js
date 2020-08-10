@@ -30,8 +30,9 @@ class MainPage extends Component {
 
   handleSetlistClick = (setlistId) => {
     API.getLyricsBySetlist(setlistId)
-      .then(res => {this.setState({ currentSetlist: res.data })
-    })
+    //   .then(res => {this.setState({ currentSetlist: res.data })
+    // })
+      .then(res => console.log("Data from song", res))
     .catch(err => console.log(err))
   }
 
@@ -59,7 +60,7 @@ class MainPage extends Component {
     return (
       <div className="bg">
         <NavTop />
-        <Auth0Profile></Auth0Profile>
+        {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
             <Col sm="4">
@@ -89,7 +90,7 @@ class MainPage extends Component {
             </Col>
             <Col>
               <Card body style={{ backgroundColor: "black", borderTop: "solid 4px #080939", borderBottom: "solid 4px #080939", borderLeft: "solid 3px #cea935", borderRight: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <Songs data={this.state} />
+                <Songs currentSetlist={this.state.currentSetlist} />
               </Card>
 
             </Col>

@@ -3,7 +3,8 @@ import InputSubmit from '../GigInputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
 const Songs = props => {
-  if (props.data.setlists.length === 0) {
+  console.log("Songs props:", props)
+  if (!props.currentSetlist) {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
@@ -24,9 +25,9 @@ const Songs = props => {
       <CardTitle>Songs:</CardTitle>
       <CardText>
         <ol>
-        {props.data.setlists.map(setlist => {
+        {props.currentSetlist.songName.map(songs => {
               return (
-                <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.songs}
+                <li className="setlistlistItem" id={songs.id} key={songs.id}>{songs.songName}
                 </li>
               )
             })}
