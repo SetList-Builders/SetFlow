@@ -6,7 +6,7 @@ mongoose.connect(
 )
 async function findSetlistForLyrics(){
     const setlists = await db.Setlist.find({})
-    const user = await db.User.findOne({ username: "zjhassler@gmail.com" })
+    const user = await db.User.findOne({ username: "melaniejindali@icloud.com" })
     const songSeed = [
         { 
             setlists: setlists,
