@@ -31,19 +31,19 @@ class CrudPage extends Component {
       .then(res => {
         this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
       })
-    API.getGigs()
-      .then(res => {
-        this.setState({ gigs: res.data })
-        console.log(` getting gigs: ${this.state.gigs}`)
-      })
+    // API.getGigs()
+    //   .then(res => {
+    //     this.setState({ gigs: res.data })
+    //     console.log(` getting gigs: ${this.state.gigs}`)
+    //   })
 
-      .catch(err => console.log(err));
-    API.getSetlists()
-      .then(res => {
-        this.setState({ setlists: res.data })
-        console.log(` getting setlists: ${this.state.setlists}`)
-      })
-      .catch(err => console.log(err))
+    //   .catch(err => console.log(err));
+    // API.getSetlists()
+    //   .then(res => {
+    //     this.setState({ setlists: res.data })
+    //     console.log(` getting setlists: ${this.state.setlists}`)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   handleInput = event => {
