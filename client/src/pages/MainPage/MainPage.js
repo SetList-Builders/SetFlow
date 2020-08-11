@@ -38,23 +38,25 @@ class MainPage extends Component {
 
   componentDidMount() {
 
-    //const { user } = useAuth0();
     API.findOrCreateUserbyemail(this.props.email)
-      .then(res => {this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
-    })
-    .catch(err => console.log(err))
-    // API.getGigsByUser()
-    //   .then(res => {this.setState({ gigs: res.data })
-    //   console.log(this.state)
-    // })
-    //   .catch(err => console.log(err));
-    // API.getSetlistsByUser()
-    //   .then(res => {this.setState({ setlists: res.data })
-    //   console.log(this.state)
-    // })
-    //   .catch(err => console.log(err))
+      .then(res => {
+        this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
+      })
+  //   API.getGigs()
+  //     .then(res => {
+  //       this.setState({ gigs: res.data })
+  //       console.log(` getting gigs: ${this.state.gigs}`)
+  //     })
+
+  //     .catch(err => console.log(err));
+  //   API.getSetlists()
+  //     .then(res => {
+  //       this.setState({ setlists: res.data })
+  //       console.log(` getting setlists: ${this.state.setlists}`)
+  //     })
+  //     .catch(err => console.log(err))
+   }
   
-}
 
   render() {
     return (
