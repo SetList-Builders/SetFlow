@@ -12,6 +12,7 @@ import Loading from "../../components/Loading/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Auth0Profile from '../../components/Auth0Provider/Auth0Profile';
 import API from '../../utils/API';
+import axios from "axios"
 
 
 class CrudPage extends Component {
@@ -34,14 +35,14 @@ class CrudPage extends Component {
     API.getGigs()
       .then(res => {
         this.setState({ gigs: res.data })
-        console.log(` getting gigs: ${this.state.gigs}`)
+        // console.log(` getting gigs: ${this.state.gigs}`)
       })
 
       .catch(err => console.log(err));
     API.getSetlists()
       .then(res => {
         this.setState({ setlists: res.data })
-        console.log(` getting setlists: ${this.state.setlists}`)
+        // console.log(` getting setlists: ${this.state.setlists}`)
       })
       .catch(err => console.log(err))
   }
@@ -121,6 +122,33 @@ class CrudPage extends Component {
       .catch(err => console.log(err));
   }
 
+  // handleSongSubmit = () => {
+  //   event.preventDefault()
+  //   const newSong = { songTitle: this.state.songTitle, songArtist: this.state.songArtist}
+  //   const newAllSongs = { ...this.state.songs, newSong}
+  //   this.setState({ songs: newAllSongs})
+  // }
+
+  handleSongSubmit = (e) => {
+    e.preventDefault()
+
+    const songObject = {
+        title: this.state.songTitle,
+        artist: this.state.songArtist
+    };
+
+    console.log("songObject: ", songObject)
+
+    axios.post('/api/lyrics/get-lyrics', songObject)
+        .then((res) => {
+            console.log(res.data)
+        }).catch((error) => {
+            console.log(error)
+        });
+
+    this.setState({ songTitle: '', songArtist: '' })
+}
+
   render() {
     console.log("THis is the CRUD email prop from auth0",this.props.email)
     return (
@@ -170,7 +198,12 @@ class CrudPage extends Component {
 
             </Col>
             <Col sm="4">
-              <AddSong />
+              <AddSong 
+              handleSongSubmit={this.handleSongSubmit} 
+              songTitle={this.state.songTitle} 
+              songArtist={this.state.songArtist}
+              onChange={this.handleInput}
+              />
             </Col>
           </Row>
         </Container>

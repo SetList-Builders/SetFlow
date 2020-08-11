@@ -2,9 +2,9 @@ import React from 'react';
 import { CardTitle, CardText, } from 'reactstrap';
 
 const GigSetList = props => {
-  console.log("GigSetList Component:", props)
-  console.log("gigs:", props.gigs)
-  console.log("setlists:", props.setlists)
+  // console.log("GigSetList Component:", props)
+  // console.log("gigs:", props.gigs)
+  // console.log("setlists:", props.setlists)
 
   if (!props.currentGig) {
     return (

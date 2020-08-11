@@ -23,13 +23,13 @@
   margin-top: 0;
 }
 
-.giglist {
+.giglist, .gigsetlist, .setlistsongs, .allsetlists {
   color: #000000; 
   margin: 20px;
   padding: 1rem;
 }
 
-.giglist.card {
+.giglist.card, .gigsetlist.card, .setlistsongs.card, .allsetlists.card {
   border-radius: 0px;
   border: solid 10px #b3b3b3;
   outline: solid 2px #e0e0e0;

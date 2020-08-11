@@ -9,7 +9,7 @@ import {
 
 
 const GigInputSubmit = props => {
-  console.log("Props-GigInputSubmit", props)
+  // console.log("Props-GigInputSubmit", props)
   return (
     <div>
       <InputGroup className="mb-3">

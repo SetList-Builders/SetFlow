@@ -3,7 +3,7 @@ import { Card, CardTitle, CardText, } from 'reactstrap';
 import Instructions from "../Instructions"
 
 const AllSetList = props => {
-console.log("AllSetList", props)
+// console.log("AllSetList", props)
   if (!props.setlists) {
     return (
       <div className="SetlistCard d-flex flex-column">

@@ -8,11 +8,11 @@ async function createSetlists() {
     return [
       {
         name: `Setlist #1 for ${user.username}`,
-        user: user.username,
+        user: user,
       },
       {
         name: `Setlist #2 for ${user.username}`,
-        user: user.username,
+        user: user,
       },
     ];
   });

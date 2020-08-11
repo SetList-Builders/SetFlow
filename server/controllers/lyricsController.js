@@ -2,6 +2,12 @@ const db = require("../models");
 
 // Defining methods for the lyricsController
 module.exports = {
+  getLyrics: function(req, res) {
+    // res.send("I'm here!")
+    console.log("Get Lyrics: ", req.body)
+    const {artist, title} = req.body
+    axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + )
+  },
   findAll: function(req, res) {
     db.Lyrics
       .find(req.query)
@@ -17,10 +23,8 @@ module.exports = {
   },
   findBySetlist: function(req, res) {
     db.Lyrics
-      .find({ setlists: req.params.key })
-      .populate("songName")
-      .populate("lyrics")
-      .populate("setlists")
+      .find({ setlists: req.params.setlistId })
+      .populate("songs")
       .populate("user")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))

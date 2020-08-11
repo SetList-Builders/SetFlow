@@ -24,7 +24,7 @@ module.exports = {
       .catch(err => res.status(422).json(err))
   },
   create: function (req, res) {
-    console.log("create Controller:", req.body)
+    // console.log("create Controller:", req.body)
     const gig = { name: req.body.name, user: req.body.user }
     db.Gig
       .create(gig)

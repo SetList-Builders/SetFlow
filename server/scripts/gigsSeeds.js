@@ -19,7 +19,7 @@ async function findUserForGig() {
     .deleteMany({})
     .then(() => db.Gig.create(gigSeed)
       .then(data => {
-        console.log("gigs records inserted!")
+        // console.log("gigs records inserted!")
       })
       .catch(err => {
         console.log(err)

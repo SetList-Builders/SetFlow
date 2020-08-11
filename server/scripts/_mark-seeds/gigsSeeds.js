@@ -10,12 +10,12 @@ async function createGigs() {
   // find the users setlists and use the first one in the gig object
   let gigSeeds = users.map((user) => {
     let userSetlists = setlists.filter((setlist) => {
-      return setlist.user.equals(user.username);
+      return setlist.user.equals(user._id);
     });
 
     return {
       name: `gig for ${user.username}`,
-      user: user.username,
+      user: user,
       setlists: [userSetlists[0]],
     };
   });
