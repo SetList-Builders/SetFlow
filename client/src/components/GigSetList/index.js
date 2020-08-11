@@ -28,7 +28,7 @@ const GigSetList = props => {
           <ol>
             {props.currentGig.setlists.map(setlist => {
               return (
-                <li className="setlistlistItem" id={setlist.id} key={setlist.id}>{setlist.name}
+                <li className="setlistlistItem" id={setlist.id} key={setlist.id} onClick={() => props.handleSetlistClickGigDash(setlist._id)}>{setlist.name}
                 </li>
               )
             })}

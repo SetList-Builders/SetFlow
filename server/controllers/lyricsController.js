@@ -6,7 +6,7 @@ module.exports = {
     // res.send("I'm here!")
     console.log("Get Lyrics: ", req.body)
     const {artist, title} = req.body
-    axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey=" + )
+    axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey="  )
   },
   findAll: function(req, res) {
     db.Lyrics

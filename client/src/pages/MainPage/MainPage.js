@@ -3,7 +3,8 @@ import NavTop from '../../components/NavTop';
 import GigList from '../../components/GigList';
 import GigSetList from '../../components/GigSetList'
 import AllSetList from '../../components/AllSetList';
-import Songs from '../../components/Songs';
+import SongsGigDash from '../../components/SongsGigDash';
+import SongsSetlistDash from '../../components/SongSetlistDash';
 import { Row, Col, Container, Card } from 'reactstrap';
 import API from '../../utils/API';
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
@@ -16,44 +17,57 @@ class MainPage extends Component {
   state = {
     gigs: [],
     currentGig: null,
-    currentSetlist: null,
+    currentSetlist1: null,
+    currentSetlist2: null,
     setlists: [],
     songs: []
   }
 
   handleGigClick = (gigId) => {
     API.getSetlistsByGig(gigId)
-      .then(res => {this.setState({ currentGig: res.data })
-    })
-    .catch(err => console.log(err))
+      .then(res => {
+        this.setState({ currentGig: res.data })
+      })
+      .catch(err => console.log(err))
   }
 
-  handleSetlistClick = (setlistId) => {
+  handleSetlistClickGigDash = (setlistId) => {
     API.getLyricsBySetlist(setlistId)
-      .then(res => {this.setState({ currentSetlist: res.data })
-    })
-    .catch(err => console.log(err))
+      .then(res => {
+        this.setState({ currentSetlist1: res.data })
+      })
+      .catch(err => console.log(err))
+  }
+
+  handleSetlistClickSetlistDash = (setlistId) => {
+    API.getLyricsBySetlist(setlistId)
+      .then(res => {
+        this.setState({ currentSetlist2: res.data })
+      })
+      .catch(err => console.log(err))
   }
 
   componentDidMount() {
 
-    //const { user } = useAuth0();
     API.findOrCreateUserbyemail(this.props.email)
-      .then(res => {this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
-    })
-    .catch(err => console.log(err))
-    // API.getGigsByUser()
-    //   .then(res => {this.setState({ gigs: res.data })
-    //   console.log(this.state)
-    // })
-    //   .catch(err => console.log(err));
-    // API.getSetlistsByUser()
-    //   .then(res => {this.setState({ setlists: res.data })
-    //   console.log(this.state)
-    // })
-    //   .catch(err => console.log(err))
-  
-}
+      .then(res => {
+        this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
+      })
+    //   API.getGigs()
+    //     .then(res => {
+    //       this.setState({ gigs: res.data })
+    //       console.log(` getting gigs: ${this.state.gigs}`)
+    //     })
+
+    //     .catch(err => console.log(err));
+    //   API.getSetlists()
+    //     .then(res => {
+    //       this.setState({ setlists: res.data })
+    //       console.log(` getting setlists: ${this.state.setlists}`)
+    //     })
+    //     .catch(err => console.log(err))
+  }
+
 
   render() {
     return (
@@ -64,32 +78,32 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
-                <GigList className="gigcard" handleGigClick={this.handleGigClick}  gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
+                <GigList className="gigcard" handleGigClick={this.handleGigClick} gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} />
+                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} handleSetlistClickGigDash={this.handleSetlistClickGigDash} />
               </Card>
             </Col>
             <Col sm="4">
               <Card className="setlistsongs">
-                <Songs currentSetlist={this.state.currentSetlist} />
+                <SongsGigDash currentSetlist1={this.state.currentSetlist1} />
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
               <Card className="allsetlists">
-                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClick={this.handleSetlistClick} setlists={this.state.setlists} />
+                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
                 <Instructions />
               </Card>
 
             </Col>
             <Col>
               <Card className="setlistsongs">
-                <Songs currentSetlist={this.state.currentSetlist} />
+                <SongsSetlistDash currentSetlist2={this.state.currentSetlist2} />
               </Card>
 
             </Col>

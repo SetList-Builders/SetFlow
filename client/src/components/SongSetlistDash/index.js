@@ -1,10 +1,15 @@
 import React from 'react';
-import InputSubmit from '../GigInputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
+<<<<<<< HEAD:client/src/components/Songs/index.js
 const Songs = props => {
   // console.log("Songs props:", props)
   if (!props.currentSetlist) {
+=======
+const SongsSetlistDash = props => {
+  console.log("Songs props:", props)
+  if (!props.currentSetlist2) {
+>>>>>>> master:client/src/components/SongSetlistDash/index.js
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
@@ -17,25 +22,25 @@ const Songs = props => {
       </div>
     )
   } else {
-  return (
-    <div className="SetlistCard d-flex flex-column">
+    return (
+      <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
         </div>
-      <CardTitle>Songs:</CardTitle>
-      <CardText>
-        <ol>
-        {props.currentSetlist.map(songs => {
+        <CardTitle>Songs:</CardTitle>
+        <CardText>
+          <ol>
+            {props.currentSetlist2.map(songs => {
               return (
                 <li className="setlistlistItem" id={songs.id} key={songs.id}>{songs.songName}
                 </li>
               )
             })}
-        </ol>
-      </CardText>
-    </div>
+          </ol>
+        </CardText>
+      </div>
 
-  );
-};
+    );
+  };
 };
 
-export default Songs;
+export default SongsSetlistDash;
