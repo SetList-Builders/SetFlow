@@ -9,7 +9,7 @@ import {
 
 
 const SetlistInputSubmit = props => {
-  console.log("Props-SetlistInputSubmit", props)
+  // console.log("Props-SetlistInputSubmit", props)
   return (
     <div>
       <InputGroup className="setlistInput mb-3">

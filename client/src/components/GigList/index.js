@@ -6,7 +6,7 @@ import Instructions from "../Instructions"
 import API from '../../utils/API';
 
 const GigList = props => {
-  console.log(`GigList Component: ${props}`)
+  // console.log(`GigList Component: ${props}`)
   if (!props.gigs) {
     return (
       <div className="d-flex flex-column">

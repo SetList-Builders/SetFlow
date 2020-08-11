@@ -9,7 +9,7 @@ module.exports = {
       .populate("setlists")
       .then(dbModel => {
         res.json(dbModel)
-        console.log(dbModel)
+        // console.log(dbModel)
       })
       .catch(err => res.status(422).json(err))
   },
@@ -26,7 +26,7 @@ module.exports = {
       .catch(err => res.status(422).json(err));
   },
   create: function (req, res) {
-    console.log("create User", req.body)
+    // console.log("create User", req.body)
     db.User
       .create(req.body)
       .then(dbModel => res.json(dbModel))
