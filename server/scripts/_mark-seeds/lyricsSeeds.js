@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../../models");
 
 //  intentionally left in this format -
 // see if  can alter it to behave the same way as the other examples

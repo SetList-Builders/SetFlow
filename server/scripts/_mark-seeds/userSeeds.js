@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../../models");
 
 // emails to seed users
 // zjhassler@gmail.com
