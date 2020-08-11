@@ -70,7 +70,7 @@ class MainPage extends Component {
             </Col>
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} />
+                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} handleSetlistClick={this.handleSetlistClick}/>
               </Card>
             </Col>
             <Col sm="4">
