@@ -1,12 +1,21 @@
 const db = require("../models");
+require('dotenv').config()
+// import axios from "axios"
+const axios = require("axios")
 
 // Defining methods for the lyricsController
 module.exports = {
   getLyrics: function(req, res) {
-    // res.send("I'm here!")
     console.log("Get Lyrics: ", req.body)
     const {artist, title} = req.body
-    axios.get("https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + song + "?apikey="  )
+    const QueryURL = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + title + "?apikey=" + process.env.REACT_APP_API_KEY;
+    axios.get(QueryURL)
+    .then(response => {
+      console.log(response.data);
+      res.status(200).send("Song data sent!")
+    }, error => {
+      console.log(error);
+    });
   },
   findAll: function(req, res) {
     db.Lyrics
