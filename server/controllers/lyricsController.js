@@ -17,10 +17,8 @@ module.exports = {
   },
   findBySetlist: function(req, res) {
     db.Lyrics
-      .find({ setlists: req.params.key })
-      .populate("songName")
-      .populate("lyrics")
-      .populate("setlists")
+      .find({ setlists: req.params.setlistId })
+      .populate("songs")
       .populate("user")
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
