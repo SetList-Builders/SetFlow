@@ -1,10 +1,9 @@
 import React from 'react';
-import InputSubmit from '../GigInputSubmit';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const Songs = props => {
+const SongsGigDash = props => {
   console.log("Songs props:", props)
-  if (!props.currentSetlist) {
+  if (!props.currentSetlist1) {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
@@ -17,25 +16,25 @@ const Songs = props => {
       </div>
     )
   } else {
-  return (
-    <div className="SetlistCard d-flex flex-column">
+    return (
+      <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
         </div>
-      <CardTitle>Songs:</CardTitle>
-      <CardText>
-        <ol>
-        {props.currentSetlist.map(songs => {
+        <CardTitle>Songs:</CardTitle>
+        <CardText>
+          <ol>
+            {props.currentSetlist1.map(songs => {
               return (
                 <li className="setlistlistItem" id={songs.id} key={songs.id}>{songs.songName}
                 </li>
               )
             })}
-        </ol>
-      </CardText>
-    </div>
+          </ol>
+        </CardText>
+      </div>
 
-  );
-};
+    );
+  };
 };
 
-export default Songs;
+export default SongsGigDash;
