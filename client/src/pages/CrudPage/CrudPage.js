@@ -139,26 +139,26 @@ class CrudPage extends Component {
           <Row>
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <GigList data={this.state} />
+                <GigList className="gigcard" handleGigClick={this.handleGigClick} gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
                 <div className="btn-title">Add Gig:</div>
                 <GigInputSubmit gigSubmit={this.handleGigSubmit} gigName={this.state.gigName} onChange={this.handleInput} />
               </Card>
             </Col >
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <GigSetList data={this.state} />
+                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} handleSetlistClickGigDash={this.handleSetlistClickGigDash} />
               </Card>
             </Col>
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <AllSetList data={this.state} />
-              </Card>
+                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
+                </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <AllSetList data={this.state} />
+              <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
                 <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistName={this.state.setlistName} onChange={this.handleInput} />
               </Card>
 

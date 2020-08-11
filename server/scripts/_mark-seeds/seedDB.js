@@ -85,9 +85,9 @@ async function updateUserAssociations(users, gigs, setlists) {
  return users.map((user) => {
    let userSetlists = setlists.filter((setlist) => {
      // mongoose objects have equals method to compare them
-     return setlist.user.equals(user);
+     return setlist.user === user.username
    });
-   let userGigs = gigs.filter((gig) => gig.user.equals(user));
+   let userGigs = gigs.filter((gig) => gig.user === user.username);
    // update the user setlist and gigs on the mongo document - since for some reason it doesn't update it when the setlist/gig document is created for that user ¯\_(ツ)_/¯
    user.setlists = userSetlists;
    user.gigs = userGigs;

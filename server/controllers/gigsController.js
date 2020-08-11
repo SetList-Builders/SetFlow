@@ -23,12 +23,18 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
-  create: function (req, res) {
+  create: async function (req, res) {
     console.log("create Controller:", req.body)
+    const user = await db.user.findOne({username: req.body.user})
     const gig = { name: req.body.name, user: req.body.user }
-    db.Gig
-      .create(gig)
-      .then(dbModel => res.json(dbModel))
+    const createGig = db.Gig.create(gig)
+    user.gigs.push(createGig)
+    await user.save()
+      // .then(dbModel => {
+      //   user.gigs.push(dbModel)
+      //   user.
+      //   res.json(dbModel)
+      // })
       .catch(err => res.status(422).json(err));
   },
   update: function (req, res) {

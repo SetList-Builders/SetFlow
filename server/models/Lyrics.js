@@ -18,8 +18,8 @@ var LyricsSchema = new Schema({
         ref: "Setlist"
     }],
     user:{
-        type: Schema.Types.ObjectId,
-        ref: "User"
+        type: String,
+        required: false
     }
 });
 
