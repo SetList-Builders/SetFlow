@@ -180,14 +180,15 @@ class CrudPage extends Component {
   render() {
     console.log("THis is the CRUD email prop from auth0", this.props.email)
     return (
-      <div className="crudBackground">
+      <div className="bg">
         <NavTop />
         {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
             <Col sm="4">
-              <Card className="cardDesign">
+              <Card className="giglist">
                 <GigList 
+                className="gigcard"
                 handleGigClick={this.handleGigClick} 
                 gigs={this.state.gigs} 
                 setlists={this.state.setlists} 
@@ -202,7 +203,7 @@ class CrudPage extends Component {
               </Card>
             </Col >
             <Col sm="4">
-              <Card className="cardDesign">
+              <Card className="gigsetlist">
                 <GigSetList 
                 setlists={this.state.setlists} 
                 gigs={this.state.gigs} 
@@ -211,7 +212,7 @@ class CrudPage extends Component {
               </Card>
             </Col>
             <Col sm="4">
-              <Card className="cardDesign">
+              <Card className="setlistsongs">
                 <AllSetList 
                  currentSetlist1={this.state.currentSetlist1} 
                  setlists={this.state.setlists}
@@ -221,7 +222,7 @@ class CrudPage extends Component {
           </Row>
           <Row>
             <Col sm="4">
-              <Card className="cardDesign">
+              <Card className="allsetlists">
                 <AllSetList 
                 currentSetlist2={this.state.currentSetlist2} 
                 allSetlistClick={this.allSetlistClick} 
@@ -241,12 +242,14 @@ class CrudPage extends Component {
               </Card>
             </Col>
             <Col sm="4">
-              <AddSong 
-              handleSongSubmit={this.handleSongSubmit} 
-              songTitle={this.state.songTitle} 
-              songArtist={this.state.songArtist}
-              onChange={this.handleInput}
+              <Card className="addsongs">
+                <AddSong 
+                handleSongSubmit={this.handleSongSubmit} 
+                songTitle={this.state.songTitle} 
+                songArtist={this.state.songArtist}
+                onChange={this.handleInput}
               />
+              </Card>
             </Col>
           </Row>
         </Container>

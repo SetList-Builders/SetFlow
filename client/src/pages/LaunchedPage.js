@@ -7,6 +7,7 @@ import Loading from "../components/Loading/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Auth0Profile from '../components/Auth0Provider/Auth0Profile';
 import API from '../utils/API';
+import './MainPage/Main.css'
 
 class LaunchedPage extends Component {
   state = {
@@ -26,18 +27,20 @@ class LaunchedPage extends Component {
 
   render() {
     return (
-      <div>
+      <div className="bg">
         <NavTop />
         <Container>
           <Row>
             <Col sm="4">
-            <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
+            <Card className="gigsetlist">
               <GigSetList data={this.state} />
             </Card>
             </Col>
 
             <Col>
-              <Lyrics data={this.state} />
+              <Card className="lyrics">
+                <Lyrics data={this.state} />
+              </Card>
             </Col>
           </Row>
         </Container>
