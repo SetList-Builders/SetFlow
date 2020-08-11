@@ -1,0 +1,24 @@
+.cardDesign.card {
+  background-color: #080939;
+  border: solid 3px #cea935;
+  color: #cea935;
+  margin: 20px;
+  padding: 1rem;
+}
+
+.gigInput,
+.setlistInput,
+.artistInput,
+.songInput {
+  margin: 10px 0px 10px;
+}
+
+.crudBackground {
+  background-color: black;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  z-index: 1000;
+}

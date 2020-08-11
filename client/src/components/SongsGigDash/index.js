@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, CardTitle, CardText, } from 'reactstrap';
+import { CardHeader, CardTitle, CardText, } from 'reactstrap';
 
 const SongsGigDash = props => {
   console.log("Songs props:", props)
