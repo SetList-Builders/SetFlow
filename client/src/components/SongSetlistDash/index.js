@@ -1,7 +1,7 @@
 import React from 'react';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const Songs = props => {
+const SongsSetlistDash = props => {
   // console.log("Songs props:", props)
   if (!props.currentSetlist) {
     return (
