@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../../models");
 
 async function createGigs() {
   // find all users
@@ -10,12 +10,12 @@ async function createGigs() {
   // find the users setlists and use the first one in the gig object
   let gigSeeds = users.map((user) => {
     let userSetlists = setlists.filter((setlist) => {
-      return setlist.user.equals(user._id);
+      return setlist.user.equals(user.username);
     });
 
     return {
       name: `gig for ${user.username}`,
-      user: user,
+      user: user.username,
       setlists: [userSetlists[0]],
     };
   });

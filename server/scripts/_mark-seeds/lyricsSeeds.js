@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../../models");
 
 //  intentionally left in this format -
 // see if  can alter it to behave the same way as the other examples
@@ -10,12 +10,14 @@ async function findSetlistForLyrics() {
       songName: "I Will Survive",
       lyrics:
         "At first I was afraid, I was petrified.  Kept thinking I could never live without you by my side...",
+      user: user.username,
     },
     {
       setlists: setlists,
       songName: "Respect",
       lyrics:
         "What you want, Baby I got it.  What you need, you know I got it.  All I'm askin' is for a little respect when get home...",
+      user: user.username,
     },
   ];
   let deletedLyrics = await db.Lyrics.deleteMany({});
