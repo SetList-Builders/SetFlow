@@ -8,6 +8,7 @@
   top: 0px;
   left: 0px;
   z-index: 1;
+  overflow: auto;
 }
 
 .card-title {
@@ -28,7 +29,8 @@
 .giglist,
 .gigsetlist,
 .setlistsongs,
-.allsetlists {
+.allsetlists,
+.lyrics {
   color: #000000;
   margin: 20px;
   padding: 1rem;
@@ -37,7 +39,8 @@
 .giglist.card,
 .gigsetlist.card,
 .setlistsongs.card,
-.allsetlists.card {
+.allsetlists.card,
+.lyrics.card {
   border-radius: 0px;
   border: solid 10px #b3b3b3;
   outline: solid 2px #e0e0e0;
