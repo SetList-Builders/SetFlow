@@ -1,9 +1,9 @@
 import React from 'react';
 import { Card, CardTitle, CardText, } from 'reactstrap';
 
-const Songs = props => {
+const SongsSetlistDash = props => {
   // console.log("Songs props:", props)
-  if (!props.currentSetlist) {
+  if (!props.currentSetlist2) {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
