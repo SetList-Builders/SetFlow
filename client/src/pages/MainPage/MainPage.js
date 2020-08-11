@@ -30,9 +30,8 @@ class MainPage extends Component {
 
   handleSetlistClick = (setlistId) => {
     API.getLyricsBySetlist(setlistId)
-    //   .then(res => {this.setState({ currentSetlist: res.data })
-    // })
-      .then(res => console.log("Data from song", res))
+      .then(res => {this.setState({ currentSetlist: res.data })
+    })
     .catch(err => console.log(err))
   }
 
