@@ -7,7 +7,7 @@ import GigInputSubmit from '../../components/GigInputSubmit'
 import SetlistInputSubmit from '../../components/SetlistInputSubmit'
 import AddSong from '../../components/AddSong';
 import AllSetList from '../../components/AllSetList';
-import Songs from '../../components/Songs';
+import SongsGigDash from '../../components/SongsGigDash';
 import Loading from "../../components/Loading/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Auth0Profile from '../../components/Auth0Provider/Auth0Profile';
@@ -165,7 +165,7 @@ class CrudPage extends Component {
             </Col >
             <Col sm="4">
               <Card body style={{ backgroundColor: "#080939", border: "solid 3px #cea935", color: "#cea935", margin: "20px" }}>
-                <Songs data={this.state} />
+                <SongsGigDash data={this.state} />
               </Card>
 
             </Col>
