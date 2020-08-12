@@ -161,21 +161,21 @@ class CrudPage extends Component {
     e.preventDefault()
 
     const songObject = {
-        title: this.state.songTitle,
-        artist: this.state.songArtist
+      title: this.state.songTitle,
+      artist: this.state.songArtist
     };
 
     console.log("songObject: ", songObject)
 
     axios.post('/api/lyrics/get-lyrics', songObject)
-        .then((res) => {
-            console.log(res.data)
-        }).catch((error) => {
-            console.log(error)
-        });
+      .then((res) => {
+        console.log(res.data)
+      }).catch((error) => {
+        console.log(error)
+      });
 
     this.setState({ songTitle: '', songArtist: '' })
-}
+  }
 
   render() {
     console.log("THis is the CRUD email prop from auth0", this.props.email)
@@ -187,35 +187,36 @@ class CrudPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
-                <GigList 
-                className="gigcard"
-                handleGigClick={this.handleGigClick} 
-                gigs={this.state.gigs} 
-                setlists={this.state.setlists} 
-                currentGig={this.state.currentGig} 
+                <GigList
+                  className="gigcard"
+                  handleGigClick={this.handleGigClick}
+                  gigs={this.state.gigs}
+                  setlists={this.state.setlists}
+                  currentGig={this.state.currentGig}
                 />
                 <div className="btn-title">Add Gig:</div>
-                <GigInputSubmit 
-                gigSubmit={this.handleGigSubmit} 
-                gigName={this.state.gigName} 
-                onChange={this.handleInput} 
+                <GigInputSubmit
+                  gigSubmit={this.handleGigSubmit}
+                  gigName={this.state.gigName}
+                  onChange={this.handleInput}
                 />
               </Card>
             </Col >
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList 
-                setlists={this.state.setlists} 
-                gigs={this.state.gigs} 
-                currentGig={this.state.currentGig} 
+                <GigSetList
+                  setlists={this.state.setlists}
+                  gigs={this.state.gigs}
+                  currentGig={this.state.currentGig}
+                  setlistClickTop={this.setlistClickTop}
                 />
               </Card>
             </Col>
             <Col sm="4">
               <Card className="setlistsongs">
-                <AllSetList 
-                 currentSetlist1={this.state.currentSetlist1} 
-                 setlists={this.state.setlists}
+                <AllSetList
+                  currentSetlist1={this.state.currentSetlist1}
+                  setlists={this.state.setlists}
                 />
               </Card>
             </Col>
@@ -223,15 +224,15 @@ class CrudPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="allsetlists">
-                <AllSetList 
-                currentSetlist2={this.state.currentSetlist2} 
-                allSetlistClick={this.allSetlistClick} 
-                setlists={this.state.setlists}
+                <AllSetList
+                  currentSetlist2={this.state.currentSetlist2}
+                  allSetlistClick={this.allSetlistClick}
+                  setlists={this.state.setlists}
                 />
-                <SetlistInputSubmit 
-                setSubmit={this.handleSetlistSubmit} 
-                setlistName={this.state.setlistName} 
-                onChange={this.handleInput} 
+                <SetlistInputSubmit
+                  setSubmit={this.handleSetlistSubmit}
+                  setlistName={this.state.setlistName}
+                  onChange={this.handleInput}
                 />
               </Card>
 
@@ -243,12 +244,12 @@ class CrudPage extends Component {
             </Col>
             <Col sm="4">
               <Card className="addsongs">
-                <AddSong 
-                handleSongSubmit={this.handleSongSubmit} 
-                songTitle={this.state.songTitle} 
-                songArtist={this.state.songArtist}
-                onChange={this.handleInput}
-              />
+                <AddSong
+                  handleSongSubmit={this.handleSongSubmit}
+                  songTitle={this.state.songTitle}
+                  songArtist={this.state.songArtist}
+                  onChange={this.handleInput}
+                />
               </Card>
             </Col>
           </Row>
