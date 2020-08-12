@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Redirect } from "react-router-dom";
 import NavTop from '../../components/NavTop';
 import GigList from '../../components/GigList';
 import GigSetList from '../../components/GigSetList'
@@ -17,10 +18,35 @@ class MainPage extends Component {
   state = {
     gigs: [],
     currentGig: null,
+    launchedGig: null,
+    toLaunchPage: false,
     currentSetlist1: null,
     currentSetlist2: null,
     setlists: [],
     songs: []
+  }
+
+  handleLaunchClick = (gigId) => {
+    API.getSetlistsByGig(gigId)
+      .then(res => {
+        this.setState({ launchedGig: res.data })
+
+        this.setRedirect()
+        this.renderRedirect()
+      })
+      .catch(err => console.log(err))
+  }
+
+  setRedirect = () => {
+    this.setState({
+      toLaunchPage: true
+    })
+  }
+
+  renderRedirect = () => {
+    if (this.state.toLaunchPage) {
+      return <Redirect to="/launched" />
+    }
   }
 
   handleGigClick = (gigId) => {
@@ -78,23 +104,28 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
-                <GigList 
-                className="gigcard" 
-                handleGigClick={this.handleGigClick} 
-                gigs={this.state.gigs} 
-                setlists={this.state.setlists} 
-                currentGig={this.state.currentGig} 
+                <GigList
+                  className="gigcard"
+                  handleGigClick={this.handleGigClick}
+                  gigs={this.state.gigs}
+                  setlists={this.state.setlists}
+                  currentGig={this.state.currentGig}
+                  // Launch props
+                  launchedGig={this.state.launchedGig}
+                  handleLaunchClick={this.handleLaunchClick}
+                  setRedirect={this.setRedirect}
+                  renderRedirect={this.renderRedirect}
                 />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList 
-                setlists={this.state.setlists} 
-                gigs={this.state.gigs} 
-                currentGig={this.state.currentGig} 
-                setlistClickTop={this.setlistClickTop} />
+                <GigSetList
+                  setlists={this.state.setlists}
+                  gigs={this.state.gigs}
+                  currentGig={this.state.currentGig}
+                  setlistClickTop={this.setlistClickTop} />
               </Card>
             </Col>
             <Col sm="4">
@@ -106,10 +137,10 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="allsetlists">
-                <AllSetList 
-                currentSetlist2={this.state.currentSetlist2} 
-                allSetlistClick={this.allSetlistClick} 
-                setlists={this.state.setlists} 
+                <AllSetList
+                  currentSetlist2={this.state.currentSetlist2}
+                  allSetlistClick={this.allSetlistClick}
+                  setlists={this.state.setlists}
                 />
                 <Instructions />
               </Card>

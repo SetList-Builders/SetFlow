@@ -12,7 +12,9 @@ import './MainPage/Main.css'
 class LaunchedPage extends Component {
   state = {
     gigs: [],
+    currentGig: null,
     setlists: [],
+    currentSetlist: null,
     songs: []
   }
 
@@ -25,6 +27,14 @@ class LaunchedPage extends Component {
       .catch(err => console.log(err))
   }
 
+  handleSetlistClick = (setlistId) => {
+    API.getLyricsBySetlist(setlistId)
+      .then(res => {
+        this.setState({ currentSetlist: res.data })
+      })
+      .catch(err => console.log(err))
+  }
+
   render() {
     return (
       <div className="bg">
@@ -32,9 +42,13 @@ class LaunchedPage extends Component {
         <Container>
           <Row>
             <Col sm="4">
-            <Card className="gigsetlist">
-              <GigSetList data={this.state} />
-            </Card>
+              <Card className="gigsetlist">
+                <GigSetList setlists={this.state.setlists}
+                  gigs={this.state.gigs}
+                  currentGig={this.state.currentGig}
+                  // handleSetlistClick={this.handleSetlistClick}
+                   />
+              </Card>
             </Col>
 
             <Col>
