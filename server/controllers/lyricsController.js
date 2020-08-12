@@ -12,10 +12,16 @@ module.exports = {
     axios.get(QueryURL)
     .then(response => {
       console.log(response.data);
+      const data = response.data;
+      // console.log(data.result.track.name)
       res.status(200).send("Song data sent!")
     }, error => {
       console.log(error);
     });
+
+    // return data
+
+    // const buildSongObject = (res, {title, artist})
   },
   findAll: function(req, res) {
     db.Lyrics
