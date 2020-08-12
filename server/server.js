@@ -1,5 +1,4 @@
 const express = require("express");
-
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -13,9 +12,9 @@ app.use(express.json());
 app.use(routes);
 if (process.env.NODE_ENV === "production") {
     app.use(express.static(__dirname + "../client/build"));
-    app.get("*",function (req, res){
-      res.sendFile(__dirname + "../client/build/index.html")
-    })
+    // app.get("*",function (req, res){
+    //   res.sendFile(__dirname + "../client/build/index.html")
+    // })
   //  app.use(express.static("client/build/index.html"))
 }
 

@@ -6,8 +6,9 @@ const apiRoutes = require("./api");
 router.use("/api", apiRoutes);
 
 // If no API routes are hit, send the React app
+//changed sendFile "" from dev to production
 router.use(function(req, res) {
-  res.sendFile(path.join(__dirname, "../../client/public/index.html"));
+  res.sendFile(path.join(__dirname, "../../client/build/index.html"));
 });
 
 module.exports = router;
