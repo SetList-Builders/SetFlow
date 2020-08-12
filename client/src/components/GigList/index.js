@@ -13,9 +13,9 @@ const GigList = props => {
         <div className="d-flex justify-content-center">
           <CardTitle className="title">My Gigs</CardTitle>
         </div>
-          <CardText className="gigtext">
-            <strong>No Gigs Added.</strong>
-          </CardText>
+        <CardText className="gigtext">
+          <strong>No Gigs Added.</strong>
+        </CardText>
       </div>
     )
   } else {
@@ -25,12 +25,15 @@ const GigList = props => {
           <CardTitle className="title">My Gigs</CardTitle>
         </div>
         <CardText>
-            {props.gigs.map(gig => {
-              return (
-                <li className="gigItem" id={gig.name} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name} <LaunchBtn />
+          {props.gigs.map(gig => {
+            return (
+              <div>
+                <li className="gigItem" id={gig.name} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name}
                 </li>
-              )
-            })}
+                <LaunchBtn />
+              </div>
+            )
+          })}
         </CardText>
 
       </div>
