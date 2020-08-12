@@ -27,11 +27,23 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err))
   },
-  create: function(req, res) {
-    db.Setlist
-      .create(req.body)
-      .then(dbModel => res.json(dbModel))
-      .catch(err => res.status(422).json(err));
+  // create: function(req, res) {
+  //   db.Setlist
+  //     .create(req.body)
+  //     .then(dbModel => res.json(dbModel))
+  //     .catch(err => res.status(422).json(err));
+  // },
+  create: async function (req, res){
+    const user = await db.User.findOne({username: req.body.user})
+    const setlist = { name: req.body.name, user: user }
+    try {
+      const createSetlist = await db.Setlist.create(setlist)
+      user.setlists.push(createSetlist)
+      await user.save()
+      res.json(createSetlist)
+    } catch (error){
+      res.status(422).json(error);
+    }
   },
   update: function(req, res) {
     db.Setlist

@@ -36,19 +36,19 @@ class CrudPage extends Component {
       .then(res => {
         this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
       })
-    API.getGigs()
-      .then(res => {
-        this.setState({ gigs: res.data })
-        // console.log(` getting gigs: ${this.state.gigs}`)
-      })
+    // API.getGigs()
+    //   .then(res => {
+    //     this.setState({ gigs: res.data })
+    //     // console.log(` getting gigs: ${this.state.gigs}`)
+    //   })
 
-      .catch(err => console.log(err));
-    API.getSetlists()
-      .then(res => {
-        this.setState({ setlists: res.data })
-        // console.log(` getting setlists: ${this.state.setlists}`)
-      })
-      .catch(err => console.log(err))
+    //   .catch(err => console.log(err));
+    // API.getSetlists()
+    //   .then(res => {
+    //     this.setState({ setlists: res.data })
+    //     // console.log(` getting setlists: ${this.state.setlists}`)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
   handleGigClick = (gigId) => {
@@ -86,51 +86,27 @@ class CrudPage extends Component {
 
   handleGigSubmit = event => {
     event.preventDefault();
-    // API.saveGig
-    //const { user } = useAuth0();
-    const newGig = { gigName: this.state.gigName, user: this.props.email }
-    const newAllGigs = { ...this.state.gigs, newGig }
-    this.setState({
-      // gigName: '', //can't run an empty string until it goes into database
-      gigs: newAllGigs
-    })
-    API.saveGig({ name: this.state.gigName, user: this.props.email })
-      .then(res => console.log("response for HandleSubmit:", res.data))
-      // .then(res => this.setState({ gigName: res.data }))
-      // .then(res => this.loadGigs())
-      .catch(err => console.log(err));
 
-    // API.create({
-    //   gigs: this.state.
-    // })
-    //   .then(res => this.loadGigs())
-    //   .catch(err => console.log(err));
-    // const newGig = { gigName: this.state.gigName }
-    // console.log("this is new gig name:", newGig)
-    // const allGigs = { ...this.state.gigs, newGig }
-    // this.setState({
-    //   gigName: "",
-    //   gigs: allGigs
-    // })
-    // API.saveGig({
-    //   gigs: this.state.gigs
-    // })
-    //   .then(res => this.loadGigs())
-    //   .catch(err => console.log(err));
+    API.saveGig({ name: this.state.gigName, user: this.props.email })
+      .then(res => {
+        console.log("response for HandleSubmit:", res.data)
+        this.setState({
+          gigs: [ ...this.state.gigs, res.data ]
+        })
+      })
+      .catch(err => console.log(err));
   }
 
   handleSetlistSubmit = event => {
     event.preventDefault();
-    const newSetlist = { setlistName: this.state.setlistName, user: this.props.email }
-    const newAllSetlists = { ...this.state.setlists, newSetlist }
-    this.setState({
-      // gigName: '', //can't run an empty string until it goes into database
-      gigs: newAllSetlists
-    })
     API.saveSetlist({ name: this.state.setlistName, user: this.props.email })
-      .then(res => console.log("response for HandleSubmit:", res.data))
-      // .then(res => this.setState({ gigName: res.data }))
-      // .then(res => this.loadGigs())
+      .then(res => {
+        console.log("response for HandleSubmit:", res.data)
+        this.setState({
+          setlists: [ ...this.state.setlists, res.data ]
+        })
+      })
+      
       .catch(err => console.log(err));
   }
 
@@ -187,6 +163,7 @@ class CrudPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
+
                 <GigList
                   className="gigcard"
                   handleGigClick={this.handleGigClick}
@@ -194,6 +171,7 @@ class CrudPage extends Component {
                   setlists={this.state.setlists}
                   currentGig={this.state.currentGig}
                 />
+
                 <div className="btn-title">Add Gig:</div>
                 <GigInputSubmit
                   gigSubmit={this.handleGigSubmit}

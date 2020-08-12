@@ -95,8 +95,8 @@ export default {
     },
 
     //Save setlist to the database
-    saveSetlist: function(savedSetlists) {
-        return axios.post("/api/setlists/", savedSetlists)
+    saveSetlist: function(savedSetlist) {
+        return axios.post("/api/setlists/", savedSetlist)
     },
 
     //Delete setlist by id
