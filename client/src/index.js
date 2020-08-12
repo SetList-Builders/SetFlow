@@ -24,7 +24,7 @@ ReactDOM.render(
       clientId={config.clientId}
       audience={config.audience}
       redirectUri={window.location.origin,"/main"}
-      onRedirectCallback={onRedirectCallback}
+      onRedirectCallback={onRedirectCallback + "/main"}
     >
       <App />
     </Auth0Provider>
