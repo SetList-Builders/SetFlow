@@ -1,5 +1,5 @@
 import React from 'react';
-import { CardTitle, CardText, } from 'reactstrap';
+import { CardTitle, CardText, Card } from 'reactstrap';
 
 const GigSetList = props => {
   // console.log("GigSetList Component:", props)
@@ -10,12 +10,16 @@ const GigSetList = props => {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
-          <CardTitle>Gig Name</CardTitle>
+          <Card body className="titleBg">
+            <CardTitle>Gig Name</CardTitle>
+            <h5>Setlists:</h5>
+          </Card>
         </div>
-        <CardTitle>Setlists:</CardTitle>
-        <CardText>
-          <i>No Setlist have been added to this gig.</i>
-        </CardText>
+        <div className="textBody">
+          <CardText>
+            <i>No Setlist have been added to this gig.</i>
+          </CardText>
+        </div>
       </div>
     )
   } else {
@@ -23,7 +27,10 @@ const GigSetList = props => {
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
         </div>
-        <CardTitle>{props.currentGig.name}</CardTitle>
+        <Card body className="titleBg">
+          <CardTitle>{props.currentGig.name}</CardTitle>
+          <h5>Setlists:</h5>
+        </Card>
         <CardText>
           <ol>
             {props.currentGig.setlists.map(setlist => {

@@ -25,7 +25,7 @@ const NavTop = () => {
 
   return (
     <div>
-      <Navbar  style={{ backgroundColor: "#CEA935", fontWeight: "700" }} light expand="md">
+      <Navbar light expand="md">
         <NavbarBrand href="/main">
           <img src={LogoIcon} alt="Logo Icon" width="50px" />
           <img src={LogoText} alt="Logo Text" width="100px" />
