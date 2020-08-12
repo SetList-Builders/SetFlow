@@ -11,7 +11,7 @@ import {
 const GigInputSubmit = props => {
   // console.log("Props-GigInputSubmit", props)
   return (
-    <div>
+    <div className="inputBody">
       <InputGroup className="gigInput mb-3">
         <Input placeholder="Name" name="gigName" value={props.gigName} onChange={props.onChange} />
         <InputGroupAddon addonType="prepend"><Button onClick={props.gigSubmit}>Submit</Button></InputGroupAddon>

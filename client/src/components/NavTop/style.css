@@ -1,12 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Galada&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Galada&display=swap");
+
+nav.navbar {
+  background: linear-gradient(180deg, #f7c82d 0%, #b67109 100%);
+}
 
 .navText {
-    font-family: 'Galada', cursive;
+  font-family: "Galada", cursive;
 }
 
 .navbuttons {
   color: black;
-  font-weight: bold;
+  font-weight: bolder;
 }
 
 .router-link-exact-active {

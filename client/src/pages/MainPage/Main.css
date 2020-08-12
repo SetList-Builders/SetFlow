@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
 .bg {
-  background: linear-gradient(#000000 50%, #3b3b3b 100%);
+  background: black;
   position: fixed;
   width: 100%;
   height: 100%;
@@ -11,19 +11,17 @@
   overflow: auto;
 }
 
-.card-title {
+.titleBg.card.card-body {
+  background: linear-gradient(#444444 0%, #1b1b1b 50%, #000000 100%);
+  color: #cea935;
+  margin-top: 0;
+  margin-bottom: 10px;
+  padding: 1px;
+  text-align: center;
   font-family: "Raleway", sans-serif;
   font-size: 20px;
-  font-weight: bold;
-  background: linear-gradient(#444444 0%, #1b1b1b 50%, #000000 100%);
-  color: #ffffff;
-  position: relative;
-  top: 0%;
-  right: 0%;
-  left: 0%;
-  padding: 5px;
-  text-align: center;
-  margin-top: 0;
+  font-weight: bolder;
+  line-height: normal;
 }
 
 .giglist,
@@ -31,21 +29,20 @@
 .setlistsongs,
 .allsetlists,
 .lyrics {
-  color: #000000;
   margin: 20px;
-  padding: 1rem;
 }
 
-.giglist.card,
-.gigsetlist.card,
-.setlistsongs.card,
-.allsetlists.card,
-.lyrics.card {
-  border-radius: 0px;
-  border: solid 10px #b3b3b3;
-  outline: solid 2px #e0e0e0;
+.textBody,
+.inputBody {
+  padding: 0rem 1rem 1rem 1rem;
 }
 
-.gigtext {
-  margin-top: 40px;
+.btn-title {
+  padding-left: 1rem;
+}
+
+.gigItem:hover,
+.setlistItem:hover, .setlistlistItem:hover {
+  color: #b67109;
+  font-weight: 500;
 }

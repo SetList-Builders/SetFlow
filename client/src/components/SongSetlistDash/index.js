@@ -7,10 +7,12 @@ const SongsSetlistDash = props => {
     return (
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
-          <CardTitle>SetList Name</CardTitle>
+          <Card body className="titleBg">
+            <CardTitle>SetList Name</CardTitle>
+            <h5>Songs:</h5>
+          </Card>
         </div>
-        <CardTitle>Songs:</CardTitle>
-        <CardText>
+        <CardText className="textBody">
           <i>No songs have been added to this setlist.</i>
         </CardText>
       </div>
@@ -20,8 +22,10 @@ const SongsSetlistDash = props => {
       <div className="SetlistCard d-flex flex-column">
         <div className="d-flex justify-content-center">
         </div>
-        <CardTitle>Songs:</CardTitle>
-        <CardText>
+        <Card body className="titleBg">
+          <CardTitle>Songs:</CardTitle>
+        </Card>
+        <CardText className="textBody">
           <ol>
             {props.currentSetlist2.map(songs => {
               return (
