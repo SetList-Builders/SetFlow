@@ -12,9 +12,9 @@ app.use(express.json());
 // Add routes, both API and view
 app.use(routes);
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static("../client/build"));
+    app.use(express.static(__dirname + "../client/build"));
     app.get("*",function (req, res){
-      res.sendFile("../client/build/index.html")
+      res.sendFile(__dirname + "../client/build/index.html")
     })
   //  app.use(express.static("client/build/index.html"))
 }
