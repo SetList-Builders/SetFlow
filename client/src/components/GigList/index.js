@@ -1,9 +1,6 @@
 import React from 'react';
 import LaunchBtn from '../LaunchBtn'
 import { CardTitle, CardText } from 'reactstrap';
-import DeleteBtn from '../DeleteBtn'
-import Instructions from "../Instructions"
-import API from '../../utils/API';
 
 const GigList = props => {
   // console.log(`GigList Component: ${props}`)
@@ -30,7 +27,7 @@ const GigList = props => {
               <div>
                 <li className="gigItem" id={gig.name} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name}
                 </li>
-                <LaunchBtn />
+                <LaunchBtn handleLaunchClick={props.handleLaunchClick} />
               </div>
             )
           })}
