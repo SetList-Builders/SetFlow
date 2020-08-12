@@ -2,7 +2,7 @@ import React from 'react';
 import { CardHeader, CardTitle, CardText, } from 'reactstrap';
 
 const SongsGigDash = props => {
-  console.log("Songs props:", props)
+  // console.log("Songs props:", props)
   if (!props.currentSetlist1) {
     return (
       <div className="SetlistCard d-flex flex-column">

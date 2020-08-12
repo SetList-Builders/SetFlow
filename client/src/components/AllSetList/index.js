@@ -24,7 +24,7 @@ const AllSetList = props => {
         <CardText>
           {props.setlists.map(setlist => {
             return (
-              <li id={setlist.id} key={setlist.id} onClick={() => props.handleSetlistClickSetlistDash(setlist._id)}> {setlist.name}
+              <li id={setlist.id} key={setlist.id} onClick={() => props.allSetlistClick(setlist._id)}> {setlist.name}
               </li>
             )
           })}

@@ -7,7 +7,7 @@ import GigInputSubmit from '../../components/GigInputSubmit'
 import SetlistInputSubmit from '../../components/SetlistInputSubmit'
 import AddSong from '../../components/AddSong';
 import AllSetList from '../../components/AllSetList';
-import SongsGigDash from '../../components/SongsGigDash';
+import SongsSetlistDash from '../../components/SongSetlistDash';
 import Loading from "../../components/Loading/Loading";
 import { useAuth0, withAuthenticationRequired } from "@auth0/auth0-react";
 import Auth0Profile from '../../components/Auth0Provider/Auth0Profile';
@@ -18,6 +18,9 @@ import './Crud.css';
 
 class CrudPage extends Component {
   state = {
+    currentGig: null,
+    currentSetlist1: null,
+    currentSetlist2: null,
     gigName: "",
     setlistName: "",
     songTitle: "",
@@ -46,6 +49,30 @@ class CrudPage extends Component {
     //     // console.log(` getting setlists: ${this.state.setlists}`)
     //   })
     //   .catch(err => console.log(err))
+  }
+
+  handleGigClick = (gigId) => {
+    API.getSetlistsByGig(gigId)
+      .then(res => {
+        this.setState({ currentGig: res.data })
+      })
+      .catch(err => console.log(err))
+  }
+
+  setlistClickTop = (setlistId) => {
+    API.getLyricsBySetlist(setlistId)
+      .then(res => {
+        this.setState({ currentSetlist1: res.data })
+      })
+      .catch(err => console.log(err))
+  }
+
+  allSetlistClick = (setlistId) => {
+    API.getLyricsBySetlist(setlistId)
+      .then(res => {
+        this.setState({ currentSetlist2: res.data })
+      })
+      .catch(err => console.log(err))
   }
 
   handleInput = event => {
@@ -129,50 +156,77 @@ class CrudPage extends Component {
   render() {
     console.log("THis is the CRUD email prop from auth0", this.props.email)
     return (
-      <div className="crudBackground">
+      <div className="bg">
         <NavTop />
         {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
             <Col sm="4">
-              <Card className="cardDesign">
-                <GigList className="gigcard" handleGigClick={this.handleGigClick} gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
+              <Card className="giglist">
+                <GigList 
+                className="gigcard" 
+                handleGigClick={this.handleGigClick} 
+                gigs={this.state.gigs} 
+                setlists={this.state.setlists} 
+                currentGig={this.state.currentGig} 
+                />
+
                 <div className="btn-title">Add Gig:</div>
-                <GigInputSubmit gigSubmit={this.handleGigSubmit} gigName={this.state.gigName} onChange={this.handleInput} />
+                <GigInputSubmit 
+                gigSubmit={this.handleGigSubmit} 
+                gigName={this.state.gigName} 
+                onChange={this.handleInput} 
+                />
               </Card>
             </Col >
             <Col sm="4">
-              <Card className="cardDesign">
-                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} handleSetlistClickGigDash={this.handleSetlistClickGigDash} />
+              <Card className="gigsetlist">
+                <GigSetList 
+                setlists={this.state.setlists} 
+                gigs={this.state.gigs} 
+                currentGig={this.state.currentGig} 
+                />
               </Card>
             </Col>
             <Col sm="4">
-              <Card className="cardDesign">
-                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
+              <Card className="setlistsongs">
+                <AllSetList 
+                 currentSetlist1={this.state.currentSetlist1} 
+                 setlists={this.state.setlists}
+                />
               </Card>
             </Col>
           </Row>
           <Row>
             <Col sm="4">
-              <Card className="cardDesign">
-                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
-                <SetlistInputSubmit setSubmit={this.handleSetlistSubmit} setlistName={this.state.setlistName} onChange={this.handleInput} />
+              <Card className="allsetlists">
+                <AllSetList 
+                currentSetlist2={this.state.currentSetlist2} 
+                allSetlistClick={this.allSetlistClick} 
+                setlists={this.state.setlists}
+                />
+                <SetlistInputSubmit 
+                setSubmit={this.handleSetlistSubmit} 
+                setlistName={this.state.setlistName} 
+                onChange={this.handleInput} 
+                />
               </Card>
 
             </Col >
             <Col sm="4">
-              <Card className="cardDesign">
-                <SongsGigDash currentSetlist1={this.state.currentSetlist1} />
+              <Card className="setlistsongs">
+                <SongsSetlistDash currentSetlist2={this.state.currentSetlist2} />
               </Card>
-
             </Col>
             <Col sm="4">
-              <AddSong 
-              handleSongSubmit={this.handleSongSubmit} 
-              songTitle={this.state.songTitle} 
-              songArtist={this.state.songArtist}
-              onChange={this.handleInput}
+              <Card className="addsongs">
+                <AddSong 
+                handleSongSubmit={this.handleSongSubmit} 
+                songTitle={this.state.songTitle} 
+                songArtist={this.state.songArtist}
+                onChange={this.handleInput}
               />
+              </Card>
             </Col>
           </Row>
         </Container>

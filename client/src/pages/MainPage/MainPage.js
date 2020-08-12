@@ -31,7 +31,7 @@ class MainPage extends Component {
       .catch(err => console.log(err))
   }
 
-  handleSetlistClickGigDash = (setlistId) => {
+  setlistClickTop = (setlistId) => {
     API.getLyricsBySetlist(setlistId)
       .then(res => {
         this.setState({ currentSetlist1: res.data })
@@ -39,7 +39,7 @@ class MainPage extends Component {
       .catch(err => console.log(err))
   }
 
-  handleSetlistClickSetlistDash = (setlistId) => {
+  allSetlistClick = (setlistId) => {
     API.getLyricsBySetlist(setlistId)
       .then(res => {
         this.setState({ currentSetlist2: res.data })
@@ -78,13 +78,23 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="giglist">
-                <GigList className="gigcard" handleGigClick={this.handleGigClick} gigs={this.state.gigs} setlists={this.state.setlists} currentGig={this.state.currentGig} />
+                <GigList 
+                className="gigcard" 
+                handleGigClick={this.handleGigClick} 
+                gigs={this.state.gigs} 
+                setlists={this.state.setlists} 
+                currentGig={this.state.currentGig} 
+                />
                 <Instructions />
               </Card>
             </Col>
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList setlists={this.state.setlists} gigs={this.state.gigs} currentGig={this.state.currentGig} handleSetlistClickGigDash={this.handleSetlistClickGigDash} />
+                <GigSetList 
+                setlists={this.state.setlists} 
+                gigs={this.state.gigs} 
+                currentGig={this.state.currentGig} 
+                setlistClickTop={this.setlistClickTop} />
               </Card>
             </Col>
             <Col sm="4">
@@ -96,7 +106,11 @@ class MainPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="allsetlists">
-                <AllSetList currentSetlist={this.state.currentSetlist} handleSetlistClickSetlistDash={this.handleSetlistClickSetlistDash} setlists={this.state.setlists} />
+                <AllSetList 
+                currentSetlist2={this.state.currentSetlist2} 
+                allSetlistClick={this.allSetlistClick} 
+                setlists={this.state.setlists} 
+                />
                 <Instructions />
               </Card>
 
