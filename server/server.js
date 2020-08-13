@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const mongoose = require("mongoose");
 const routes = require("./routes");
 const app = express();
@@ -11,9 +12,10 @@ app.use(express.json());
 // Add routes, both API and view
 app.use(routes);
 if (process.env.NODE_ENV === "production") {
-    app.use(express.static(__dirname + "/../client/build"));
+    app.use(express.static(path.resolve("./client/build")))
     app.get("*", function(req, res) {
-            res.sendFile(__dirname + "/../client/build/index.html")
+        console.log(req.headers)
+            res.sendFile(path.resolve("./client/build/index.html"))
         })
         //  app.use(express.static("client/build/index.html"))
 }
