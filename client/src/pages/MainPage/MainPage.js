@@ -18,7 +18,7 @@ class MainPage extends Component {
   state = {
     gigs: [],
     currentGig: null,
-    launchedGig: null,
+    launchedGig: [],
     toLaunchPage: false,
     currentSetlist1: null,
     currentSetlist2: null,
@@ -26,11 +26,11 @@ class MainPage extends Component {
     songs: []
   }
 
-  handleLaunchClick = (gigId) => {
-    API.getSetlistsByGig(gigId)
+  handleLaunchClick = (id) => {
+    API.getGig(id)
       .then(res => {
         this.setState({ launchedGig: res.data })
-
+        console.log('data from api:', id)
         this.setRedirect()
         this.renderRedirect()
       })
@@ -79,25 +79,25 @@ class MainPage extends Component {
       .then(res => {
         this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
       })
-      // API.getGigs()
-      //   .then(res => {
-      //     this.setState({ gigs: res.data })
-      //     console.log(` getting gigs: ${this.state.gigs}`)
-      //   })
+    // API.getGigs()
+    //   .then(res => {
+    //     this.setState({ gigs: res.data })
+    //     console.log(` getting gigs: ${this.state.gigs}`)
+    //   })
 
-      //   .catch(err => console.log(err));
-      // API.getSetlists()
-      //   .then(res => {
-      //     this.setState({ setlists: res.data })
-      //     console.log(` getting setlists: ${this.state.setlists}`)
-      //   })
-      //   .catch(err => console.log(err))
+    //   .catch(err => console.log(err));
+    // API.getSetlists()
+    //   .then(res => {
+    //     this.setState({ setlists: res.data })
+    //     console.log(` getting setlists: ${this.state.setlists}`)
+    //   })
+    //   .catch(err => console.log(err))
   }
 
 
   render() {
     return (
-      <div className="bg">
+      <div className="bg" >
         <NavTop />
         {/* <Auth0Profile></Auth0Profile> */}
         <Container>
@@ -153,8 +153,8 @@ class MainPage extends Component {
 
             </Col>
           </Row>
-        </Container>
-      </div>
+        </Container >
+      </div >
     )
   }
 }
