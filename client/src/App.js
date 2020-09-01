@@ -30,7 +30,7 @@ const App = () => {
         <Route path="/edit" >
           <CrudPage email={user ? user.email : null} />
         </Route>
-        <Route path="/launched" component={LaunchedPage} />
+        <Route path="/launched/:id" component={LaunchedPage} />
       </Switch>
     </Router>
   );
