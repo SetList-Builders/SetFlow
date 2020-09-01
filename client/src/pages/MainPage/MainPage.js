@@ -45,7 +45,7 @@ class MainPage extends Component {
 
   renderRedirect = () => {
     if (this.state.toLaunchPage) {
-      return <Redirect to="/launched" />
+      return <Redirect to="/launched/:id" />
     }
   }
 
@@ -73,19 +73,26 @@ class MainPage extends Component {
       .catch(err => console.log(err))
   }
 
-  componentDidMount() {
-
+  gigsByEmail = () => {
     API.findOrCreateUserbyemail(this.props.email)
-      .then(res => {
-        this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
-      })
-    // API.getGigs()
-    //   .then(res => {
-    //     this.setState({ gigs: res.data })
-    //     console.log(` getting gigs: ${this.state.gigs}`)
-    //   })
+    .then(res => {
+      this.setState({ gigs: res.data.gigs, setlists: res.data.setlists })
+    })
+  }
 
-    //   .catch(err => console.log(err));
+  loadGigs = () => {
+    API.getGigs()
+      .then(res => {
+        this.setState({ gigs: res.data })
+        console.log(` getting gigs: ${this.state.gigs}`)
+      })
+      .catch(err => console.log(err));
+    }
+
+  componentDidMount() {
+    this.gigsByEmail();
+    this.loadGigs();
+
     // API.getSetlists()
     //   .then(res => {
     //     this.setState({ setlists: res.data })
