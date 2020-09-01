@@ -18,21 +18,17 @@ class LaunchedPage extends Component {
     songs: []
   }
 
-  componentDidMount() {
-    API.getGigs()
-      .then(res => this.setState({ gigs: res.data }))
-      .catch(err => console.log(err));
-    API.getSetlists()
-      .then(res => this.setState({ setlists: res.data }))
-      .catch(err => console.log(err))
-  }
-
-  handleSetlistClick = (setlistId) => {
-    API.getLyricsBySetlist(setlistId)
-      .then(res => {
-        this.setState({ currentSetlist: res.data })
+  loadCurrentGig = () => {
+    API.getGig(this.props.match.params.id)
+    .then(res => {
+      this.setState({ currentGig: res.data })
+        console.log(res.data)
       })
-      .catch(err => console.log(err))
+      .catch(err => console.log(err));
+    }
+
+  componentDidMount() {
+    this.loadCurrentGig();
   }
 
   render() {
@@ -43,7 +39,8 @@ class LaunchedPage extends Component {
           <Row>
             <Col sm="4">
               <Card className="gigsetlist">
-                <GigSetList setlists={this.state.setlists}
+                <GigSetList 
+                  setlists={this.state.setlists} 
                   gigs={this.state.gigs}
                   currentGig={this.state.currentGig}
                   // handleSetlistClick={this.handleSetlistClick}
