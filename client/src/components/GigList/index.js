@@ -34,16 +34,19 @@ const GigList = props => {
           {props.gigs.map(gig => {
             return (
               <div className="textBody">
-                <li className="gigItem" id={gig._id} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name}
+                <li 
+                  className="gigItem" 
+                  id={gig._id} 
+                  key={gig._id} 
+                  onClick={() => props.handleGigClick(gig._id)}>
+                  {gig.name}
                 </li>
                 <Link to={"/launched/" + gig._id}>
-                <LaunchBtn 
-                  id={gig._id} 
-                  handleLaunchClick={props.handleLaunchClick} 
-                  launchedGig={props.launchedGig}
-                  setRedirect={props.setRedirect}
-                  renderRedirect={props.renderRedirect}
-                />
+                  <LaunchBtn 
+                    onClick={() => props.handleGigClick(gig._id)}
+                    gigName={gig.name}
+                    id={gig._id} 
+                  />
                 </Link>
               </div>
             )
