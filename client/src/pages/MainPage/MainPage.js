@@ -29,8 +29,7 @@ class MainPage extends Component {
   handleLaunchClick = (id) => {
     API.getGig(id)
       .then(res => {
-        this.setState({ launchedGig: res.data })
-        console.log('data from api:', id)
+        this.setState({ currentGig: res.data })
         this.setRedirect()
         this.renderRedirect()
       })
@@ -84,7 +83,6 @@ class MainPage extends Component {
     API.getGigs()
       .then(res => {
         this.setState({ gigs: res.data })
-        console.log(` getting gigs: ${this.state.gigs}`)
       })
       .catch(err => console.log(err));
     }
