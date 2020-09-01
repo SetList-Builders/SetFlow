@@ -1,6 +1,8 @@
 import React from 'react';
 import LaunchBtn from '../LaunchBtn'
 import { CardTitle, CardText, Card } from 'reactstrap';
+import { Link } from "react-router-dom";
+
 
 const GigList = props => {
   // console.log(`GigList Component: ${props}`)
@@ -34,10 +36,15 @@ const GigList = props => {
               <div className="textBody">
                 <li className="gigItem" id={gig._id} key={gig._id} onClick={() => props.handleGigClick(gig._id)}>{gig.name}
                 </li>
-                <LaunchBtn id={gig._id} handleLaunchClick={props.handleLaunchClick} launchedGig={props.launchedGig}
+                <Link to={"/launched/" + gig._id}>
+                <LaunchBtn 
+                  id={gig._id} 
+                  handleLaunchClick={props.handleLaunchClick} 
+                  launchedGig={props.launchedGig}
                   setRedirect={props.setRedirect}
                   renderRedirect={props.renderRedirect}
                 />
+                </Link>
               </div>
             )
           })}
