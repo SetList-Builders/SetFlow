@@ -162,6 +162,11 @@ class CrudPage extends Component {
         {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
+            <Col>
+            <h1 className="pageTitle justify-content-center">Edit Page</h1>
+            </Col>
+          </Row>
+          <Row>
             <Col sm="4">
               <Card className="giglist">
 
