@@ -127,8 +127,8 @@ export default {
     },
 
     //Save song to the database
-    saveLyrics: function(savedSongs) {
-        return axios.post("/api/lyrics/", savedSongs)
+    saveLyrics: function(saveSong) {
+        return axios.post("/api/lyrics/save/" + saveSong)
     },
 
     //Delete song by id

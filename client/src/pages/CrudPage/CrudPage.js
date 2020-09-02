@@ -143,6 +143,7 @@ class CrudPage extends Component {
 
     console.log("songObject: ", songObject)
 
+    // axios.post('api/lyrics/save/', songObject)
     axios.post('/api/lyrics/get-lyrics', songObject)
       .then((res) => {
         console.log(res.data)

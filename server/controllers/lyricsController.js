@@ -1,7 +1,8 @@
 const db = require("../models");
 require('dotenv').config()
 // import axios from "axios"
-const axios = require("axios")
+const axios = require("axios");
+const { User } = require("../models");
 
 // Defining methods for the lyricsController
 module.exports = {
@@ -10,13 +11,24 @@ module.exports = {
     const {artist, title} = req.body
     const QueryURL = "https://orion.apiseeds.com/api/music/lyric/" + artist + "/" + title + "?apikey=" + process.env.REACT_APP_API_KEY;
     axios.get(QueryURL)
-    .then(response => {
+    // .then(async (response) => {
+      .then(response => {
       console.log(response.data);
       const data = response.data;
-      // console.log(data.result.track.name)
+      // const setlist =  await db.Setlist.findById({_id: "5f31eaf865bcbb274745c5b5"})
+      // try {
+      //   const saveLyric = await db.Lyrics.create(data)
+      //   console.log(saveLyric)
+      //   setlist.songs.push(saveLyric)
+      //   await setlist.save()
+      //   res.json(saveLyric)
+      // } catch (error) {
+      //   res.status(422).json("Lyrics save error: ", error)
+      // }
+      // // console.log(data.result.track.name)
       res.status(200).send("Song data sent!")
     }, error => {
-      console.log(error);
+      console.log(error)
     });
 
     // return data
