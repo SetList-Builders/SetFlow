@@ -18,4 +18,8 @@ router.route("/setlists/:setlistId")
 
 router.route("/get-lyrics")
   .post(lyricsController.getLyrics)
+
+router.route("/save/:saveSong")
+  .post(lyricsController.create)
+
 module.exports = router
