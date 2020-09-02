@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway&display=swap");
 
+.pageTitle {
+  text-align: center;
+  font-family: "Raleway", sans-serif;
+  color: white;
+  opacity: 0.4;
+  margin-top: 6px;
+}
+
 .bg {
   background: black;
   position: fixed;
@@ -42,7 +50,8 @@
 }
 
 .gigItem:hover,
-.setlistItem:hover, .setlistlistItem:hover {
+.setlistItem:hover,
+.setlistlistItem:hover {
   color: #b67109;
   font-weight: 500;
 }

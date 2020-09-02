@@ -107,6 +107,11 @@ class MainPage extends Component {
         {/* <Auth0Profile></Auth0Profile> */}
         <Container>
           <Row>
+            <Col>
+            <h1 className="pageTitle justify-content-center">Welcome to Your DashBoard!</h1>
+            </Col>
+          </Row>
+          <Row>
             <Col sm="4">
               <Card className="giglist">
                 <GigList
